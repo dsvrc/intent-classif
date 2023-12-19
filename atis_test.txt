@@ -1,0 +1,893 @@
+BOS मैं चार्लोट से लास वेगास के लिए एक उड़ान ढूंढना चाहूंगा जो सेंट में रुके।  EOS\t	O O O B-toloc.city_name I-toloc.city_name O O O O O O O O O O atis_flight
+BOS पहले अप्रैल को मुझे टैकोमा से सैन जोस के लिए सुबह 7 बजे से पहले प्रस्थान करने का टिकट चाहिए EOS\t	B-depart_time.time_relative B-depart_date.month_name O O O O B-toloc.city_name I-toloc.city_name O O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O B-depart_time.time_relative O O O O O atis_airfare
+BOS पहली अप्रैल को मुझे फ़ीनिक्स से सैन डिएगो जाने वाली उड़ान की आवश्यकता है EOS\t	O B-depart_date.month_name O O O O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS मैं पहली अप्रैल को फ़ीनिक्स से सैन डिएगो तक एकतरफ़ा यात्रा करने वाली उड़ान चाहता हूँ EOS\t	O O B-depart_date.month_name O O O B-toloc.city_name I-toloc.city_name O O I-round_trip O O O O O atis_flight
+BOS मैं पहली अप्रैल में डेल्टा एयरलाइंस पर ऑरलैंडो से साल्ट लेक सिटी के लिए उड़ान चाहता हूँ EOS\t	O O B-depart_date.month_name O B-airline_name I-airline_name O B-fromloc.city_name O O O O O O O O O atis_flight
+BOS मुझे टोरंटो से नेवार्क के लिए एक तरफ की उड़ान चाहिए जो बुधवार शाम या गुरुवार सुबह छूटेगी EOS\t	O B-fromloc.city_name O B-toloc.city_name O O O O O O O O B-depart_date.day_name B-depart_time.period_of_day O B-depart_date.day_name B-depart_time.period_of_day O atis_flight
+BOS सोमवार सुबह मैं कोलंबस से इंडियानापोलिस के लिए उड़ान भरना चाहूंगा EOS\t	B-depart_date.day_name B-depart_time.period_of_day O O O B-toloc.city_name O O O O O atis_flight
+BOS बुधवार, छह अप्रैल को मैं दोपहर 3 बजे के बाद लॉन्ग बीच से कोलंबस के लिए उड़ान भरना चाहूंगा EOS\t	O I-depart_date.day_number B-depart_date.month_name O O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O B-depart_time.time_relative O O O O O O O O O atis_flight
+BOS बुधवार, छह अप्रैल को दोपहर 12 बजे के बाद मैं लॉन्ग बीच से कोलंबस के लिए उड़ान भरना चाहूंगा EOS\t	O I-depart_date.day_number B-depart_date.month_name O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O B-depart_time.time_relative O O O O O O O O O O atis_flight
+BOS क्या बुधवार, छह अप्रैल को लॉन्ग बीच से कोलंबस के लिए कोई उड़ानें हैं? EOS\t	O O I-depart_date.day_number B-depart_date.month_name O O O O O O O O O O atis_flight
+BOS मेम्फिस से टैकोमा डिनर के लिए उड़ान खोजें EOS\t	B-fromloc.city_name O O O O O O O atis_flight
+BOS अगले बुधवार को कैनसस सिटी से शिकागो की उड़ान शाम 7 बजे के आसपास शिकागो पहुंचनी चाहिए, वापसी की उड़ान गुरुवार को होगी EOS\t	I-return_date.date_relative B-depart_date.day_name O O O O B-toloc.city_name O O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O O B-toloc.city_name O O O O O B-depart_date.day_name O O atis_flight
+BOS अगले बुधवार को कैनसस सिटी से शिकागो के लिए उड़ान और कीमतें दिखाएं, शाम 7 बजे तक शिकागो पहुंचेंगे EOS\t	I-return_date.date_relative B-depart_date.day_name O O O O B-toloc.city_name O O O O O O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O B-toloc.city_name O atis_flight;atis_airfare
+BOS मियामी से शिकागो के लिए अमेरिकी उड़ान शाम लगभग 5 बजे शिकागो पहुंचेगी EOS\t	B-fromloc.city_name O B-toloc.city_name O O B-airline_name O B-depart_time.period_of_day B-depart_time.time_relative B-arrive_time.time I-depart_time.time B-toloc.city_name O atis_flight
+BOS अगले शनिवार को न्यूयॉर्क शहर में आने वाली उड़ानें खोजें EOS\t	I-return_date.date_relative B-arrive_date.day_name O O O O O O O O atis_flight
+BOS शनिवार, नौ अप्रैल को साल्ट लेक सिटी से न्यूयॉर्क के लिए नॉनस्टॉप उड़ानें खोजें EOS\t	O O B-depart_date.month_name O O O O O O O O O O O atis_flight
+BOS आज के लिए बरबैंक से मिल्वौकी तक की उड़ानें दिखाएं EOS\t	B-depart_date.today_relative O O B-fromloc.city_name O O O O O O atis_flight
+BOS मिल्वौकी से सेंट तक कल शाम की उड़ानें दिखाएं।  EOS\t	O O O O B-depart_date.today_relative B-depart_time.period_of_day O O O atis_flight
+BOS सेंट से शनिवार शाम की उड़ानें दिखाएं।  EOS\t	O O B-arrive_date.day_name B-depart_time.period_of_day O O O atis_flight
+BOS बरबैंक से सेंट तक उड़ानें दिखाएं।  EOS\t	B-fromloc.city_name O O O O O atis_flight
+BOS सोमवार को बरबैंक से मिल्वौकी के लिए उड़ानें दिखाएं EOS\t	B-depart_date.day_name O B-fromloc.city_name O O O O O O atis_flight
+BOS मिल्वौकी से सेंट तक मंगलवार शाम की उड़ानें दिखाएं।  EOS\t	O O O O B-depart_date.day_name B-depart_time.period_of_day O O O atis_flight
+BOS सेंट से बुधवार शाम की उड़ानें दिखाएं।  EOS\t	O O B-depart_date.day_name B-depart_time.period_of_day O O O atis_flight
+BOS कैनसस सिटी से लॉस एंजिल्स तक कौन सी उड़ानें यात्रा करती हैं EOS\t	O O O B-toloc.city_name I-toloc.city_name O O B-fare_basis_code O I-round_trip O O atis_flight
+BOS लास वेगास से लॉस एंजिल्स तक कौन सी उड़ानें यात्रा करती हैं EOS\t	B-toloc.city_name I-toloc.city_name O B-toloc.city_name I-toloc.city_name O O B-fare_basis_code O I-round_trip O O atis_flight
+BOS नौ अप्रैल को कैनसस सिटी से लॉस एंजिल्स के लिए कौन सी उड़ानें यात्रा करती हैं EOS\t	O B-depart_date.month_name O O O O B-toloc.city_name I-toloc.city_name O O O B-fare_basis_code O I-round_trip O O atis_flight
+BOS कौन सी उड़ानें लास वेगास से लॉस एंजिल्स कैलिफ़ोर्निया तक यात्रा करती हैं और नौ अप्रैल को शाम 4 से 5 बजे के बीच पहुंचती हैं EOS\t	O B-fare_basis_code O B-toloc.city_name I-toloc.city_name O B-toloc.city_name I-toloc.city_name O O I-round_trip O O O O B-depart_date.month_name O B-depart_time.period_of_day B-arrive_time.start_time O B-arrive_time.time I-depart_time.time O O O O atis_flight
+BOS हमारी ओर से कौन सी उड़ानें ऑरलैंडो से क्लीवलैंड तक जाती हैं EOS\t	O O O O B-fare_basis_code O B-fromloc.city_name O B-toloc.city_name O O O atis_flight
+BOS पाँच अप्रैल को क्लीवलैंड से इंडियानापोलिस तक कौन सी उड़ानें यात्रा करती हैं EOS\t	O B-depart_date.month_name O B-toloc.city_name O B-toloc.city_name O O B-fare_basis_code O I-round_trip O O atis_flight
+BOS पांच अप्रैल को इंडियानापोलिस से सैन डिएगो के लिए कौन सी उड़ानें यात्रा करती हैं EOS\t	O B-depart_date.month_name O B-toloc.city_name O B-toloc.city_name I-toloc.city_name O O O B-fare_basis_code O I-round_trip O O atis_flight
+BOS पाँच अप्रैल को क्लीवलैंड से इंडियानापोलिस तक कौन सी उड़ानें जाती हैं EOS\t	O B-depart_date.month_name O B-toloc.city_name O B-toloc.city_name O O B-fare_basis_code O O O atis_flight
+BOS कौन सी उड़ानें नैशविले से टैकोमा तक यात्रा करती हैं EOS\t	O B-fare_basis_code O O O O O I-round_trip O O atis_flight
+BOS क्या टैकोमा हवाई अड्डा हवाई अड्डे से शहर क्षेत्र तक परिवहन की सुविधा प्रदान करता है EOS\t	O O O O O O O O O O O O O O O O atis_ground_service
+BOS कौन सी उड़ानें टैकोमा से सैन जोस तक यात्रा करती हैं EOS\t	O B-fare_basis_code O O O B-toloc.city_name I-toloc.city_name O I-round_trip O O atis_flight
+BOS नैशविले से टैकोमा के लिए उड़ानें सप्ताह के किस दिन उड़ान भरती हैं? EOS\t	O O O O O O O O O O O O O atis_day_name
+BOS टैकोमा से सैन जोस तक कौन सी उड़ानें हैं? EOS\t	O O B-toloc.city_name I-toloc.city_name O O B-fare_basis_code O O atis_flight
+BOS सैन जोस से नैशविले के लिए उड़ानें सप्ताह के किस दिन उड़ान भरती हैं EOS\t	B-toloc.city_name I-toloc.city_name O O O O O O O O O O O O atis_day_name
+BOS टैकोमा से सैन जोस तक कौन सी उड़ानें हैं? EOS\t	O O B-toloc.city_name I-toloc.city_name O O B-fare_basis_code O O atis_flight
+BOS मुझे एक उड़ान चाहिए जो बोस्टन से ऑरलैंडो तक जाए EOS\t	O O O O O B-fromloc.city_name O B-fromloc.city_name O O atis_flight
+BOS क्या बोस्टन से ऑरलैंडो तक न्यूयॉर्क से जुड़ने वाली कोई उड़ानें हैं? EOS\t	O B-fromloc.city_name O B-fromloc.city_name O O O O O O O O atis_flight
+BOS क्या बोस्टन से ऑरलैंडो तक कोलंबस से जुड़ने वाली कोई उड़ानें हैं? EOS\t	O B-fromloc.city_name O B-fromloc.city_name O O O O O O O O atis_flight
+BOS क्या यह उड़ान रात्रि भोजन परोसती है? EOS\t	O O O O B-meal O O atis_flight
+BOS मुझे चार्लोट से मियामी के लिए उड़ान चाहिए EOS\t	O O O B-fromloc.city_name O O O O atis_flight
+BOS मुझे मियामी से टोरंटो के लिए एक नॉनस्टॉप उड़ान चाहिए EOS\t	O B-fromloc.city_name O B-fromloc.city_name O O O O O O atis_flight
+BOS मुझे टोरंटो से सेंट तक एक नॉनस्टॉप उड़ान चाहिए।  EOS\t	O B-fromloc.city_name O O O O O O O atis_flight
+BOS मुझे टोरंटो से सेंट तक की उड़ान चाहिए।  EOS\t	O B-fromloc.city_name O O O O O O atis_flight
+BOS मुझे सेंट से फ्लाइट चाहिए।  EOS\t	O O O O O atis_flight
+BOS मुझे ला गार्डिया से सैन जोस के लिए यूनाइटेड एयरलाइंस की उड़ान चाहिए EOS\t	O B-fromloc.airport_name I-fromloc.airport_name O B-toloc.city_name I-toloc.city_name O O B-airline_name I-airline_name O O O atis_flight
+BOS मुझे टाम्पा से मिल्वौकी के लिए उड़ान चाहिए EOS\t	O O O O O O O O atis_flight
+BOS मुझे मिल्वौकी से सिएटल के लिए उड़ान चाहिए EOS\t	O O O B-toloc.city_name O O O O atis_flight
+BOS टाम्पा से मिल्वौकी तक अमेरिकी उड़ान 811 में क्या भोजन परोसा जाता है? EOS\t	O O O O B-airline_name O B-flight_number O O B-meal O O O atis_meal
+BOS मिल्वौकी से सिएटल तक अमेरिकी उड़ान 665 673 में कौन सा भोजन परोसा जाता है EOS\t	O O B-toloc.city_name O B-airline_name O B-flight_number I-flight_number O O O B-meal O O O atis_meal
+BOS मुझे मेम्फिस से लास वेगास के लिए उड़ान चाहिए EOS\t	O B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O atis_flight
+BOS मुझे लास वेगास से ओंटारियो के लिए उड़ान चाहिए EOS\t	O B-toloc.city_name I-toloc.city_name O B-toloc.city_name O O O O atis_flight
+BOS मुझे ओंटारियो से मेम्फिस के लिए उड़ान चाहिए EOS\t	O B-toloc.city_name O B-fromloc.city_name O O O O atis_flight
+BOS कौन सी उड़ानें मिल्वौकी से टाम्पा तक जाती हैं और नैशविले में रुकती हैं EOS\t	O B-fare_basis_code O O O O O O O O O O O O atis_flight
+BOS कौन सी उड़ानें अगले शनिवार को दोपहर के बाद न्यूआर्क से प्रस्थान करती हैं और लॉस एंजिल्स पहुंचती हैं EOS\t	O B-fare_basis_code O I-return_date.date_relative B-arrive_date.day_name O B-depart_time.period_of_day O B-depart_time.time_relative O O O O O O B-toloc.city_name I-toloc.city_name O O atis_flight
+BOS कौन सी उड़ानें डेट्रॉइट से प्रस्थान करती हैं और सेंट पर पहुंचती हैं।  EOS\t	O B-fare_basis_code O O O O O O O O O O O atis_flight
+BOS नॉर्थवेस्ट एयरलाइन की कौन सी उड़ानें डेट्रॉइट से निकलती हैं और सेंट पर पहुंचती हैं।  EOS\t	O I-airline_name O O B-fare_basis_code O O O O O O O O O O atis_flight
+BOS कौन सी उड़ानें अगले मंगलवार को शिकागो से रवाना होंगी और शाम 6 बजे के आसपास डेट्रॉइट पहुंचेंगी EOS\t	O B-fare_basis_code O I-return_date.date_relative B-depart_date.day_name O B-toloc.city_name O O O O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O O O O atis_flight
+BOS मुझे शिकागो से डेट्रॉइट के लिए अगले मंगलवार को प्रस्थान करने वाली और परसों लौटने वाली राउंड ट्रिप उड़ानें दिखाएँ EOS\t	O B-toloc.city_name O O O O I-return_date.date_relative B-depart_date.day_name O O O O O O O O O O O O atis_flight
+BOS कौन सी राउंड ट्रिप उड़ानें अगले मंगलवार को शाम 6 बजे के आसपास शिकागो से रवाना होती हैं और डेट्रॉइट पहुंचती हैं EOS\t	O B-fare_basis_code O O O I-return_date.date_relative B-depart_date.day_name O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O O B-toloc.city_name O O O O O O O O atis_flight
+BOS कौन सी राउंड ट्रिप उड़ानें अगले मंगलवार को शिकागो से रवाना होंगी और शाम 6 बजे के आसपास डेट्रॉइट पहुंचेंगी EOS\t	O B-fare_basis_code O O O I-return_date.date_relative B-depart_date.day_name O B-toloc.city_name O O O O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O O O O atis_flight
+BOS कौन सी उड़ानें सोमवार को मॉन्ट्रियल से रवाना होती हैं और सुबह शिकागो पहुंचती हैं EOS\t	O B-fare_basis_code O B-depart_date.day_name O B-fromloc.city_name O O O O O B-depart_time.period_of_day B-toloc.city_name O O atis_flight
+BOS कौन सी उड़ानें बारह अप्रैल को शिकागो से रवाना होती हैं और सुबह इंडियानापोलिस पहुंचती हैं EOS\t	O B-fare_basis_code O B-return_date.day_number B-depart_date.month_name O B-toloc.city_name O O O O O B-depart_time.period_of_day B-toloc.city_name O O atis_flight
+BOS कौन सी उड़ानें बुधवार, तेरह अप्रैल को इंडियानापोलिस से रवाना होती हैं और सुबह मॉन्ट्रियल पहुंचती हैं EOS\t	O B-fare_basis_code O O O B-depart_date.month_name O B-toloc.city_name O O O O O B-depart_time.period_of_day B-fromloc.city_name O O atis_flight
+BOS कौन सी उड़ानें 12 अप्रैल को इंडियानापोलिस से रवाना होती हैं और रात 10 बजे के आसपास मॉन्ट्रियल पहुंचती हैं EOS\t	O B-fare_basis_code O B-depart_time.time B-depart_date.month_name O B-toloc.city_name O O O O O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O O B-fromloc.city_name O O atis_flight
+BOS मैं लॉन्ग बीच से सेंट तक जाना चाहूँगा।  EOS\t	O O O O O O O O atis_flight
+BOS अगले बुधवार को मैं कैनसस सिटी से शिकागो की यात्रा पर निकलना चाहूँगा जो शाम 7 बजे के आसपास शिकागो पहुँचेगी EOS\t	I-return_date.date_relative B-depart_date.day_name O O O O O B-toloc.city_name O I-round_trip O O O O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O O B-toloc.city_name O atis_flight
+BOS मैं शाम 7 बजे के आसपास शिकागो से कैनसस सिटी लौटना चाहूँगा EOS\t	O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O O B-toloc.city_name O O O O O atis_flight
+BOS मैं आज दोपहर को सिनसिनाटी से बरबैंक के लिए अमेरिकी उड़ान से रवाना होना चाहूंगा EOS\t	O B-depart_date.today_relative B-depart_time.period_of_day O B-fromloc.city_name O B-fromloc.city_name O O B-airline_name O O O O O atis_flight
+BOS रविवार शाम को मैं सैन डिएगो कैलिफ़ोर्निया की उड़ान पर मॉन्ट्रियल क्यूबेक से निकलना चाहूंगा EOS\t	B-depart_date.day_name B-depart_time.period_of_day O O B-toloc.city_name I-toloc.city_name O O O O B-fromloc.city_name B-fromloc.state_name O O O atis_flight
+BOS मॉन्ट्रियल क्यूबेक से सैन डिएगो कैलिफ़ोर्निया के लिए रविवार को कौन सी उड़ानें हैं? EOS\t	B-fromloc.city_name B-fromloc.state_name O B-toloc.city_name I-toloc.city_name O O O B-depart_date.day_name O O B-fare_basis_code O O atis_flight
+BOS मंगलवार को सैन डिएगो कैलिफ़ोर्निया से इंडियानापोलिस इंडियाना के लिए उड़ानें हैं, मैं चाहूंगा कि उड़ान दोपहर में हो EOS\t	B-depart_date.day_name O B-toloc.city_name I-toloc.city_name O O B-toloc.city_name B-toloc.state_name O O O O O O O O B-depart_time.period_of_day O O atis_flight
+BOS गुरुवार की सुबह मैं इंडियानापोलिस से टोरंटो के लिए एक नॉनस्टॉप उड़ान चाहता हूँ EOS\t	B-depart_date.day_name O B-depart_time.period_of_day O B-toloc.city_name O B-fromloc.city_name O O O O O O O atis_flight
+BOS शुक्रवार की सुबह मैं टोरंटो से मॉन्ट्रियल के लिए उड़ान भरना चाहूँगा EOS\t	B-depart_date.day_name O B-depart_time.period_of_day O B-fromloc.city_name O B-fromloc.city_name O O O O O atis_flight
+BOS मैं आज लॉस एंजिल्स से चार्लोट के लिए सुबह की उड़ान चाहूंगा EOS\t	O B-depart_date.today_relative B-toloc.city_name I-toloc.city_name O O O O B-depart_time.period_of_day O O O atis_flight
+BOS बुधवार की रात को मैं चार्लोट से नेवार्क के लिए उड़ान चाहता हूँ EOS\t	B-depart_date.day_name O B-depart_time.period_of_day O O O O B-toloc.city_name O O O O O atis_flight
+BOS शुक्रवार की रात को मैं न्यूआर्क से लॉस एंजिल्स के लिए उड़ान चाहता हूँ EOS\t	B-depart_date.day_name O B-depart_time.period_of_day O O O O B-toloc.city_name I-toloc.city_name O O O O O atis_flight
+BOS न्यूयॉर्क के रास्ते टाम्पा से मॉन्ट्रियल के लिए उड़ान खोजें EOS\t	O O O O O B-fromloc.city_name O O O O atis_flight
+BOS कृपया मियामी फ़्लोरिडा से लास वेगास, नेवादा के लिए शाम 4 बजे से पहले आने वाली उड़ान ढूंढें EOS\t	O B-fromloc.city_name O O B-toloc.city_name O B-toloc.state_name O O B-depart_time.period_of_day B-arrive_time.start_time I-depart_time.time O B-depart_time.time_relative O O O O atis_flight
+BOS कृपया लास वेगास से मिशिगन के लिए उड़ान खोजें EOS\t	O B-toloc.city_name I-toloc.city_name O B-toloc.state_name O O O O atis_flight
+BOS कृपया डेट्रॉइट मिशिगन से सेंट के लिए उड़ान ढूंढें।  EOS\t	O O B-toloc.state_name O O O O O O atis_flight
+BOS कृपया सेंट से उड़ान ढूंढें।  EOS\t	O O O O O atis_flight
+BOS कृपया अलास्का एयरलाइंस पर सैन डिएगो से टोरंटो के लिए उड़ान खोजें EOS\t	O B-airline_name I-airline_name O B-toloc.city_name I-toloc.city_name O B-fromloc.city_name O O O O atis_flight
+BOS कृपया कल नैशविले में रुकने के साथ कोलंबस से ह्यूस्टन के लिए उड़ानें ढूंढें EOS\t	O B-depart_date.today_relative O O O O O O O B-toloc.city_name O O O O atis_flight
+BOS कृपया मुझे रात के खाने के साथ नैशविले से ह्यूस्टन तक नॉनस्टॉप उड़ानें प्रदान करें EOS\t	O O B-depart_time.period_of_day O O O O O O B-toloc.city_name O O O O O atis_flight
+BOS कृपया कैनसस सिटी से न्यूआर्क के लिए उपलब्ध उड़ानें ढूंढें EOS\t	O O O O O O O O O O atis_flight
+BOS कृपया एक उड़ान ढूंढें जो कैनसस सिटी से नेवार्क से ऑरलैंडो से वापस कैनसस सिटी तक जाती हो EOS\t	O O O O O O O O B-toloc.city_name O B-fromloc.city_name O O O O O O O atis_flight
+BOS कृपया कैनसस सिटी से न्यूआर्क के लिए उड़ान खोजें EOS\t	O O O O O O O O O atis_flight
+BOS कृपया न्यूआर्क से ऑरलैंडो के लिए उड़ान खोजें EOS\t	O O O B-fromloc.city_name O O O O atis_flight
+BOS कृपया ऑरलैंडो से कैनसस सिटी के लिए उड़ान खोजें EOS\t	O B-fromloc.city_name O O O O O O O atis_flight
+BOS मैं दोपहर में सिनसिनाटी के माध्यम से कोलंबस से फीनिक्स के लिए उड़ान भरना चाहूंगा EOS\t	O B-depart_time.period_of_day O B-fromloc.city_name O O O O O O O O O O O atis_flight
+BOS मैं जानना चाहूंगा कि लॉस एंजिल्स में कौन से हवाई अड्डे हैं EOS\t	O O O O B-toloc.city_name I-toloc.city_name O O O O O O atis_airport
+BOS क्या बरबैंक हवाई अड्डे पर कैनसस शहर से कोई उड़ान आती है EOS\t	O B-fromloc.city_name O O O O O O O O O O atis_flight
+BOS कौन सी उड़ानें शनिवार को दोपहर में कैनसस सिटी से बरबैंक पहुंचती हैं EOS\t	O B-fare_basis_code O B-arrive_date.day_name O B-depart_time.period_of_day O O O O B-fromloc.city_name O O atis_flight
+BOS शनिवार, तेईस अप्रैल को दोपहर में कौन सी उड़ानें लास वेगास से बरबैंक पहुंचती हैं EOS\t	O O B-depart_date.month_name O B-depart_time.period_of_day O O B-fare_basis_code O B-toloc.city_name I-toloc.city_name O B-fromloc.city_name O O atis_flight
+BOS ऑरलैंडो से क्लीवलैंड के लिए कौन सी उड़ानें उपलब्ध हैं जो रात 10 बजे के आसपास पहुंचती हैं EOS\t	B-fromloc.city_name O B-toloc.city_name O O O B-fare_basis_code O O O O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O O O O atis_flight
+BOS इक्कीस अप्रैल को देर दोपहर में इंडियानापोलिस से सैन डिएगो के लिए कौन सी उड़ानें उपलब्ध हैं EOS\t	O B-depart_date.month_name O B-depart_time.period_of_day B-depart_time.period_of_day O B-toloc.city_name O B-toloc.city_name I-toloc.city_name O O O B-fare_basis_code O O O atis_flight
+BOS इक्कीस अप्रैल को सुबह क्लीवलैंड से इंडियानापोलिस जाने वाली कौन सी उड़ानें रवाना होती हैं EOS\t	O B-depart_date.month_name O B-depart_time.period_of_day B-toloc.city_name O B-toloc.city_name O O O B-fare_basis_code O O O O atis_flight
+BOS इक्कीस अप्रैल को सुबह नैशविले से टैकोमा के लिए कौन सी उड़ानें उपलब्ध हैं EOS\t	O B-depart_date.month_name O B-depart_time.period_of_day O O O O O O B-fare_basis_code O O O atis_flight
+BOS बाईस अप्रैल को सुबह टैकोमा से सैन जोस के लिए कौन सी उड़ानें उपलब्ध हैं EOS\t	O B-depart_date.month_name O B-depart_time.period_of_day O O B-toloc.city_name I-toloc.city_name O O O B-fare_basis_code O O O atis_flight
+BOS सैन जोस से नैशविले के लिए तेईस अप्रैल को सुबह रवाना होने वाली कौन सी उड़ानें उपलब्ध हैं EOS\t	B-toloc.city_name I-toloc.city_name O O O O O B-depart_date.month_name O B-depart_time.period_of_day O O O O B-fare_basis_code O O O atis_flight
+BOS डेट्रॉइट और वेस्टचेस्टर काउंटी के बीच एक तरफ़ा किराया सबसे महंगा क्या है? EOS\t	O O B-toloc.city_name I-toloc.city_name O O O O I-transport_type O O O O atis_airfare
+BOS डेट्रॉइट और वेस्टचेस्टर काउंटी के बीच कौन सी एयरलाइंस उड़ान भरती हैं EOS\t	O O B-toloc.city_name I-toloc.city_name O O O B-fare_basis_code I-airline_name O O O atis_airline
+BOS डेट्रॉइट से वेस्टचेस्टर काउंटी के लिए प्रस्थान का समय क्या है? EOS\t	O O B-toloc.city_name I-toloc.city_name O O O O O O O atis_flight_time
+BOS बाल्टीमोर से ओकलैंड के लिए नवीनतम उड़ान कौन सी है जो रात्रिभोज परोसती है EOS\t	B-fromloc.city_name O B-toloc.city_name O O B-flight_mod O O B-fare_basis_code O O O O O atis_flight
+BOS बाल्टीमोर और ओकलैंड के बीच नाश्ता परोसने वाली सबसे पहली उड़ान कौन सी है? EOS\t	B-fromloc.city_name O B-toloc.city_name O O B-meal_description O O O O O O B-fare_basis_code O atis_flight
+BOS बोस्टन से अमेरिका पश्चिम के किन शहरों के लिए प्रथम श्रेणी में उड़ान भरती है EOS\t	B-fromloc.city_name O B-airline_name I-airline_name O O O O O O O O O O O atis_city
+BOS कौन सी एयरलाइन बोस्टन से सैन डिएगो तक उड़ान भरती है EOS\t	O B-fare_basis_code I-airline_name B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O atis_airline
+BOS डलास से टाम्पा के लिए नवीनतम नाश्ता उड़ान क्या है? EOS\t	B-stoploc.city_name O O O O B-flight_mod B-meal_description O O O atis_flight
+BOS मुझे मिनियापोलिस में स्टॉपओवर के साथ सिएटल से बोस्टन तक की सभी लुफ्थांसा उड़ानें दिखाओ EOS\t	O O O O O O B-toloc.city_name O B-fromloc.city_name O O O B-airline_name O O atis_flight
+BOS मुझे मिनियापोलिस में स्टॉपओवर के साथ सिएटल से बोस्टन तक की सभी उड़ानें दिखाएं EOS\t	O O O O O O B-toloc.city_name O B-fromloc.city_name O O O O O atis_flight
+BOS डलास में स्टॉपओवर के साथ फिलाडेल्फिया से सैन फ्रांसिस्को की उड़ानों की सूची बनाएं EOS\t	B-stoploc.city_name O O O O O O B-toloc.city_name I-toloc.city_name O O O O O atis_flight
+BOS मुझे बोस्टन और डेनवर के बीच कनेक्टिंग उड़ानें और उपयोग किए जाने वाले विमानों के प्रकार दिखाओ EOS\t	O B-fromloc.city_name O B-toloc.city_name O O O O O O O O O O O O O atis_flight
+BOS मुझे फिलाडेल्फिया से फोर्ट वर्थ तक की सभी सुबह की उड़ानें दिखाओ EOS\t	O O O O O O O O B-depart_time.period_of_day O O O atis_flight
+BOS मुझे कैनसस सिटी से सेंट तक की सभी उड़ानें दिखाओ।  EOS\t	O O O O O O O O O O atis_flight
+BOS मुझे कैनसस सिटी से सेंट तक उत्तर पश्चिमी उड़ान 608 दिखाओ।  EOS\t	O O O O O O B-fromloc.state_name O O B-flight_number O atis_flight
+BOS मुझे सोमवार को इंडियानापोलिस से चार्लोट तक की सभी उड़ानें दिखाओ EOS\t	O B-depart_date.day_name O B-toloc.city_name O O O O O O O atis_flight
+BOS चार्लोट हवाई अड्डे चार्लोट हवाई अड्डे और डाउनटाउन चार्लोट के बीच जमीनी परिवहन क्या है? EOS\t	O O O O O O O O O O O O O O O atis_ground_service
+BOS मुझे चार्लोट से मिनियापोलिस तक की सभी उड़ानें दिखाओ जो सोमवार को दोपहर 2 बजे या उसके बाद रवाना होती हैं EOS\t	O O O O O O O O O O B-depart_date.day_name O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O O B-depart_time.time_relative O O O atis_flight
+BOS मुझे मंगलवार सुबह चार्लोट से मिनियापोलिस तक की सभी उड़ानें दिखाओ EOS\t	O B-depart_date.day_name B-depart_time.period_of_day O O O O O O O O atis_flight
+BOS मुझे मंगलवार सुबह चार्लोट से मिनियापोलिस के लिए सीधी उड़ान दिखाएँ EOS\t	O B-depart_date.day_name B-depart_time.period_of_day O O O O O O O O atis_flight
+BOS कृपया मुझे सोमवार को चार्लोट से मिनियापोलिस के लिए 1500 उड़ान दिखाएँ EOS\t	O O B-depart_date.day_name O O O O O O B-flight_number O O atis_flight
+BOS मुझे मंगलवार को मिनियापोलिस से इंडियानापोलिस के लिए दोपहर 2 बजे के बाद रवाना होने वाली सभी उड़ानें दिखाओ EOS\t	O B-depart_date.day_name O O O B-toloc.city_name O O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O B-depart_time.time_relative O O O O O O atis_flight
+BOS मुझे मिनियापोलिस से इंडियाना तक की उड़ानें दिखाओ EOS\t	O O O B-toloc.state_name O O O O atis_flight
+BOS मुझे मंगलवार दोपहर को मिनियापोलिस से इंडियानापोलिस तक की उड़ानें दिखाओ EOS\t	O B-depart_date.day_name B-depart_time.period_of_day O O O B-toloc.city_name O O O O atis_flight
+BOS मुझे सोमवार को इंडियानापोलिस से चार्लोट के लिए यूएस 1207 की उड़ान दिखाओ और सोमवार को चार्लोट से मिनियापोलिस के लिए यूएस 1500 की उड़ान दिखाओ और मिनियापोलिस से इंडियानापोलिस के लिए फ्लाइट टीडब्ल्यूए 639 दिखाओ EOS\t	O B-depart_date.day_name O B-toloc.city_name O O O O O B-flight_number O O O O B-depart_date.day_name O O O O O O O B-flight_number O O O O O O B-toloc.city_name O O O O B-flight_number O atis_flight
+BOS मुझे लास वेगास से न्यूयॉर्क शहर तक की सभी उड़ानें दिखाओ EOS\t	O B-toloc.city_name I-toloc.city_name O O O O O O O O atis_flight
+BOS कौन सी विभिन्न एयरलाइनें लास वेगास से न्यूयॉर्क शहर तक जाती हैं EOS\t	O B-fare_basis_code O O B-toloc.city_name I-toloc.city_name O O O O O O atis_airline
+BOS मुझे शुक्रवार को लास वेगास से जेएफके तक अमेरिका पश्चिम और टीडब्ल्यूए की सभी उड़ानें दिखाएं EOS\t	O B-depart_date.day_name O B-toloc.city_name I-toloc.city_name O O O B-airline_name I-airline_name O O O O O O atis_flight
+BOS टैकोमा से मियामी के लिए कौन सी उड़ानें हैं जो कल शाम 6 बजे के बाद रवाना होंगी EOS\t	O O B-fromloc.city_name O O O B-fare_basis_code O O O B-depart_date.today_relative B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O atis_flight
+BOS मैं दस जून को सैन डिएगो से ह्यूस्टन के लिए उड़ान भरना चाहूंगा EOS\t	O O B-depart_date.month_name O B-toloc.city_name I-toloc.city_name O B-toloc.city_name O O O O O atis_flight
+BOS क्या दस जून को शाम 6 बजे के बाद ह्यूस्टन से नेवार्क के लिए अमेरिकन एयरलाइंस की उड़ान है? EOS\t	O O B-depart_date.month_name O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative B-toloc.city_name O B-toloc.city_name O O B-airline_name I-airline_name O O O atis_flight
+BOS क्या दस जून को अपराह्न तीन बजे के बाद ह्यूस्टन से नेवार्क के लिए अमेरिकन एयरलाइंस की उड़ान है? EOS\t	O O B-depart_date.month_name O O I-depart_date.day_number I-depart_time.time O B-depart_time.time_relative B-toloc.city_name O B-toloc.city_name O O B-airline_name I-airline_name O O O atis_flight
+BOS मुझे छह जून को शाम 6 बजे तक सिनसिनाटी से डेनवर पहुंचना है EOS\t	O I-depart_date.day_number B-depart_date.month_name O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-fromloc.city_name O B-toloc.city_name O O atis_flight
+BOS डेनवर में जमीनी परिवहन क्या है? EOS\t	B-toloc.city_name O O O O O atis_ground_service
+BOS डेनवर के लिए टैक्सी का किराया क्या है? EOS\t	B-toloc.city_name O O B-transport_type O I-transport_type O O atis_ground_fare
+BOS डेनवर में जमीनी परिवहन के किराये क्या हैं? EOS\t	B-toloc.city_name O O O O B-transport_type O O atis_ground_fare
+BOS मुझे सात जून को अपराह्न तीन बजे के बाद डेनवर से वेस्टचेस्टर काउंटी के लिए उड़ान भरनी है EOS\t	O B-depart_date.day_number B-depart_date.month_name O O I-depart_date.day_number I-depart_time.time O B-depart_time.time_relative B-toloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O atis_flight
+BOS वेस्टचेस्टर काउंटी में जमीनी परिवहन क्या है? EOS\t	B-toloc.city_name I-toloc.city_name O O O O O atis_ground_service
+BOS मुझे 8 जून को दोपहर 3 बजे के बाद वेस्टचेस्टर काउंटी से सिनसिनाटी के लिए यूनाइटेड एयरलाइंस की उड़ान लेनी है EOS\t	O B-depart_time.time B-depart_date.month_name O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O B-depart_time.time_relative B-toloc.city_name I-toloc.city_name O B-fromloc.city_name O O B-airline_name I-airline_name O O O O atis_flight
+BOS आठ जून को यूनाइटेड एयरलाइंस की उड़ानें वेस्टचेस्टर काउंटी से सिनसिनाटी तक जाती हैं EOS\t	B-depart_time.time B-depart_date.month_name O B-airline_name I-airline_name O O B-toloc.city_name I-toloc.city_name O B-fromloc.city_name O O O atis_flight
+BOS आठ जून को वेस्टचेस्टर काउंटी से सिनसिनाटी के लिए कौन सी उड़ानें जाती हैं EOS\t	B-depart_time.time B-depart_date.month_name O B-toloc.city_name I-toloc.city_name O B-fromloc.city_name O O O B-fare_basis_code O O O atis_flight
+BOS क्या हम छह जून को सिनसिनाटी से डेनवर के लिए हवाई उड़ान भरेंगे? EOS\t	O B-airline_name I-depart_date.day_number B-depart_date.month_name O B-fromloc.city_name O B-toloc.city_name O O O O O atis_flight
+BOS छठे जून को सिनसिनाटी से डेनवर के लिए उड़ानों की सूची बनाएं EOS\t	O B-depart_date.month_name O B-fromloc.city_name O B-toloc.city_name O O O O O O atis_flight
+BOS सात जून को डेनवर से वेस्टचेस्टर काउंटी के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_number B-depart_date.month_name O B-toloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS आठ जून को वेस्टचेस्टर काउंटी से सिनसिनाटी के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_time.time B-depart_date.month_name O B-toloc.city_name I-toloc.city_name O B-fromloc.city_name O O O O O O atis_flight
+BOS छठे जून को सिनसिनाटी से वेस्टचेस्टर काउंटी के लिए उड़ानों की सूची बनाएं EOS\t	O B-depart_date.month_name O B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS सात जून को वेस्टचेस्टर काउंटी से डेनवर के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_number B-depart_date.month_name O B-toloc.city_name I-toloc.city_name O B-toloc.city_name O O O O O O atis_flight
+BOS आठ जून को डेनवर से सिनसिनाटी के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_time.time B-depart_date.month_name O B-toloc.city_name O B-fromloc.city_name O O O O O O atis_flight
+BOS छह जून को शाम 4 बजे के बाद डेनवर से सिनसिनाटी के लिए उड़ानों की सूची बनाएं EOS\t	I-depart_date.day_number B-depart_date.month_name O B-depart_time.period_of_day B-arrive_time.start_time I-depart_time.time O B-depart_time.time_relative B-toloc.city_name O B-fromloc.city_name O O O O O O atis_flight
+BOS सात जून को सिनसिनाटी से वेस्टचेस्टर काउंटी के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_number B-depart_date.month_name O B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS सात जून को वेस्टचेस्टर काउंटी से सिनसिनाटी के लिए शाम 5 बजे के बाद प्रस्थान करने वाली उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_number B-depart_date.month_name O B-toloc.city_name I-toloc.city_name O B-fromloc.city_name O O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O O O O O O atis_flight
+BOS छह जून को सुबह 6 से 10 बजे के बीच लव फील्ड से कौन सी एयरलाइंस बंद होंगी EOS\t	I-depart_date.day_number B-depart_date.month_name O B-depart_time.period_of_day B-arrive_time.time O B-arrive_time.time I-depart_time.time O O O O O O B-fare_basis_code I-airline_name O O atis_airline
+BOS छह जून को लव फील्ड में कौन सी उड़ानें पहुंचती हैं EOS\t	I-depart_date.day_number B-depart_date.month_name O O O O O B-fare_basis_code O O O atis_flight
+BOS सुबह 9 बजे से पहले मॉन्ट्रियल से फिली तक की उड़ानों की सूची बनाएं EOS\t	B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative B-fromloc.city_name O O O O O O O O atis_flight
+BOS क्लीवलैंड से मेम्फिस तक की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O B-fromloc.city_name O O O O O O atis_flight
+BOS मेम्फिस से क्लीवलैंड तक की उड़ानों की सूची बनाएं EOS\t	B-fromloc.city_name O B-toloc.city_name O O O O O O atis_flight
+BOS पहली जुलाई को डेनवर से बाल्टीमोर तक आने वाली उड़ानों की सूची बनाएं EOS\t	O B-arrive_date.month_name O B-toloc.city_name O B-fromloc.city_name O O O O O O O atis_flight
+BOS डलास से बाल्टीमोर के लिए पहली जुलाई में आने वाली उड़ानों की सूची बनाएं EOS\t	B-stoploc.city_name O B-fromloc.city_name O O O B-arrive_date.month_name O O O O O O O atis_flight
+BOS पिट्सबर्ग से बाल्टीमोर तक पहली जुलाई को आने वाली उड़ानों की सूची बनाएं EOS\t	B-fromloc.city_name O B-fromloc.city_name O O B-arrive_date.month_name O O O O O O O atis_flight
+BOS कैनेडियन एयरलाइंस इंटरनेशनल पर उड़ानों की सूची बनाएं EOS\t	B-airline_name I-airline_name O O O O O O atis_flight
+BOS कितनी कैनेडियन एयरलाइंस की अंतर्राष्ट्रीय उड़ानें j31 का उपयोग करती हैं EOS\t	O B-airline_name I-airline_name O O O O O O O O atis_quantity
+BOS कितनी कैनेडियन एयरलाइंस की अंतर्राष्ट्रीय उड़ानें विमान 320 का उपयोग करती हैं EOS\t	O B-airline_name I-airline_name O O O O B-aircraft_code O O O O atis_quantity
+BOS कैनेडियन एयरलाइंस की कितनी उड़ानें विमान dh8 का उपयोग करती हैं EOS\t	B-airline_name I-airline_name O O O O B-aircraft_code O O O O atis_quantity
+BOS मुझे अमेरिकी एयरलाइंस की वे उड़ानें दिखाओ जो सेंट से उड़ान भरती हैं।  EOS\t	O B-airline_name I-airline_name O O O O O O O O O O atis_flight
+BOS मुझे अमेरिकी एयरलाइंस की वे उड़ानें दिखाओ जो सेंट से जाती हैं।  EOS\t	O B-airline_name I-airline_name O O O O O O O O O atis_flight
+BOS कौन सा हवाई अड्डा ओंटारियो कैलिफ़ोर्निया के सबसे निकट है EOS\t	O O O O B-toloc.city_name O O O O O atis_airport
+BOS मुझे ह्यूस्टन से ऑरलैंडो तक की उड़ानें दिखाओ EOS\t	O B-toloc.city_name O B-fromloc.city_name O O O O atis_flight
+BOS मुझे ऑरलैंडो से ह्यूस्टन तक की उड़ानें दिखाओ EOS\t	O B-fromloc.city_name O B-toloc.city_name O O O O atis_flight
+BOS मुझे डेट्रॉइट से लास वेगास तक की उड़ानें दिखाओ EOS\t	O O O B-toloc.city_name I-toloc.city_name O O O O atis_flight
+BOS मुझे लास वेगास से डेट्रॉइट तक का सबसे सस्ता राउंड ट्रिप कोच किराया दिखाओ EOS\t	O B-toloc.city_name I-toloc.city_name O O O O O O O O O I-transport_type O atis_airfare
+BOS मुझे लास वेगास से डेट्रॉइट तक टीडब्ल्यूए पर सबसे सस्ता राउंड ट्रिप कोच किराया दिखाओ EOS\t	O B-toloc.city_name I-toloc.city_name O O O O O O O O O O I-transport_type O atis_airfare
+BOS मुझे डेल्टा उड़ानें दिखाओ जो कोच यात्रियों को नाश्ता परोसती हैं EOS\t	O B-airline_name O O O O O O B-meal_description O O atis_flight
+BOS भोजन कोड एसबी क्या है? EOS\t	B-meal O O O O atis_abbreviation
+BOS डीएल 468 पर कौन सा भोजन उपलब्ध है, जो सुबह 950 बजे सैन फ्रांसिस्को पहुंचता है EOS\t	O B-flight_number O O O B-meal O O O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time B-toloc.city_name I-toloc.city_name O O atis_meal
+BOS मुझे टाम्पा से सैन फ्रांसिस्को तक की डेल्टा उड़ानें दिखाओ EOS\t	O O O B-toloc.city_name I-toloc.city_name O O B-airline_name O O atis_flight
+BOS मुझे डेल्टा उड़ान 486 दिखाओ EOS\t	O B-airline_name O B-flight_number O atis_flight
+BOS सोमवार को टावर हवाई उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name O O O O O O O atis_flight
+BOS भोजन के साथ सभी टावर हवाई उड़ानों की सूची बनाएं EOS\t	B-meal O O O O O O O O O atis_flight
+BOS बाल्टीमोर से कौन सी उड़ानें प्रस्थान करती हैं EOS\t	B-fromloc.city_name O O B-fare_basis_code O O O O atis_flight
+BOS कौन सी उड़ानें बाल्टीमोर से प्रस्थान करती हैं और शुक्रवार को सैन फ्रांसिस्को पहुंचती हैं EOS\t	O B-fare_basis_code O B-fromloc.city_name O O O O O B-depart_date.day_name O B-toloc.city_name I-toloc.city_name O O atis_flight
+BOS कौन सी उड़ानें सुबह सिनसिनाटी से रवाना होती हैं और टाम्पा पहुंचती हैं EOS\t	O B-fare_basis_code O B-depart_time.period_of_day B-fromloc.city_name O O O O O O O O atis_flight
+BOS कौन सी उड़ानें ताम्पा से प्रस्थान करती हैं और शाम को सिनसिनाटी पहुंचती हैं EOS\t	O B-fare_basis_code O O O O O O O B-depart_time.period_of_day O B-fromloc.city_name O O atis_flight
+BOS कौन सी उड़ानें शाम को टाम्पा से प्रस्थान करती हैं और सिनसिनाटी पहुंचती हैं EOS\t	O B-fare_basis_code O B-depart_time.period_of_day O O O O O O O B-fromloc.city_name O O atis_flight
+BOS कौन सी उड़ानें फिलाडेल्फिया से प्रस्थान करती हैं और अटलांटा पहुंचती हैं EOS\t	O B-fare_basis_code O O O O O O O B-toloc.city_name O O atis_flight
+BOS कौन सी उड़ानें अटलांटा से प्रस्थान करती हैं और टोरंटो पहुंचती हैं EOS\t	O B-fare_basis_code O B-toloc.city_name O O O O O B-fromloc.city_name O O atis_flight
+BOS कौन सी उड़ानें टोरंटो से प्रस्थान करती हैं और वाशिंगटन डीसी पहुंचती हैं EOS\t	O B-fare_basis_code O B-fromloc.city_name O O O O O B-toloc.city_name B-toloc.state_code O O atis_flight
+BOS कौन सी उड़ानें न्यूयॉर्क से प्रस्थान करती हैं और सुबह 10 बजे के बाद लॉस एंजिल्स पहुंचती हैं EOS\t	O B-fare_basis_code O O O O O O O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative B-toloc.city_name I-toloc.city_name O O atis_flight
+BOS न्यूयॉर्क का ला गार्डिया शहर से कितनी दूर है? EOS\t	O O B-fromloc.airport_name I-fromloc.airport_name O O O O O atis_distance
+BOS टोरंटो अंतर्राष्ट्रीय शहर से कितनी दूर है? EOS\t	B-fromloc.city_name O O O O O O atis_distance
+BOS लॉस एंजिल्स अंतरराष्ट्रीय शहर से कितनी दूर है? EOS\t	B-toloc.city_name I-toloc.city_name I-airline_name O O O O O atis_distance
+BOS सैन फ्रांसिस्को इंटरनेशनल शहर से कितनी दूर है? EOS\t	B-toloc.city_name I-toloc.city_name O O O O O O atis_distance
+BOS बोस्टन में लिमोज़ीन सेवा कितनी है? EOS\t	B-fromloc.city_name O B-transport_type O O O atis_ground_fare
+BOS ला गार्डिया में एक लिमोज़ीन सेवा की कीमत कितनी है? EOS\t	B-fromloc.airport_name I-fromloc.airport_name O O B-transport_type O O O O O atis_ground_fare
+BOS टोरंटो इंटरनेशनल में एक लिमोज़ीन सेवा की कीमत कितनी है? EOS\t	B-fromloc.city_name O O O B-transport_type O O O O O atis_ground_fare
+BOS लॉस एंजिल्स में लिमोज़ीन सेवा कितनी है? EOS\t	B-toloc.city_name I-toloc.city_name O B-transport_type O O O atis_ground_fare
+BOS वाशिंगटन डीसी और कोलंबस ओहियो के बीच कौन सी एयरलाइंस उड़ान भरती हैं EOS\t	B-toloc.city_name B-toloc.state_code O O B-toloc.state_name O O O B-fare_basis_code I-airline_name O O O atis_airline
+BOS वाशिंगटन डीसी और कोलंबस ओहियो के बीच कौन सी उड़ानें हैं? EOS\t	B-toloc.city_name B-toloc.state_code O O B-toloc.state_name O O O B-fare_basis_code O O atis_flight
+BOS वाशिंगटन डीसी और कोलंबस ओहियो के बीच कौन सी उड़ानें हैं? EOS\t	B-toloc.city_name B-toloc.state_code O O B-toloc.state_name O O O B-fare_basis_code O O atis_flight
+BOS वाशिंगटन और कोलंबस के बीच सभी उड़ानों का किराया क्या है? EOS\t	B-toloc.city_name O O O O O O O I-transport_type O O atis_airfare
+BOS चार्लोट हवाई अड्डे पर हमारे लिए कितने विभिन्न प्रकार के विमान हैं EOS\t	O O O O O O O O O O O O atis_aircraft
+BOS शनिवार को दोपहर 1 बजे चार्लोट में आने वाली सभी हवाई उड़ानों की सूची बनाएं EOS\t	B-arrive_date.day_name O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O O O O O O O O O O atis_flight
+BOS भारत इंडियानापोलिस से मेम्फिस तक प्रथम श्रेणी राउंड ट्रिप हवाई किराया क्या है EOS\t	O B-toloc.city_name O B-fromloc.city_name O O O O O O I-transport_type O O atis_airfare
+BOS मेम्फिस से मियामी तक सभी उड़ानों की सूची बनाएं EOS\t	B-fromloc.city_name O B-fromloc.city_name O O O O O O atis_flight
+BOS सोमवार की सुबह इंडियानापोलिस से मेम्फिस तक की सभी उड़ानें और उनके किराए की सूची बनाएं EOS\t	B-depart_date.day_name O B-depart_time.period_of_day B-toloc.city_name O B-fromloc.city_name O O O O O O O O O O atis_flight;atis_airfare
+BOS बुधवार शाम को मेम्फिस से मियामी तक की सभी उड़ानें और उनके किराए की सूची बनाएं EOS\t	B-depart_date.day_name B-depart_time.period_of_day O B-fromloc.city_name O B-fromloc.city_name O O O O O O O O O O atis_flight;atis_airfare
+BOS मियामी और इंडियानापोलिस के बीच सभी उड़ानों के लिए सभी उड़ानें और उनके किराए की सूची बनाएं EOS\t	B-fromloc.city_name O B-toloc.city_name O O O O O O O O O O O O O O atis_flight;atis_airfare
+BOS सोमवार को क्लीवलैंड से कैनसस सिटी के लिए सभी उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name O B-toloc.city_name O O O O O O O O O O atis_flight
+BOS कैनसस सिटी से क्लीवलैंड तक सभी उड़ानों की सूची बनाएं EOS\t	O O O B-toloc.city_name O O O O O O atis_flight
+BOS क्लीवलैंड से नैशविले तक सभी उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O O O O O O O O atis_flight
+BOS रविवार को नैशविले से क्लीवलैंड के लिए सभी उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name O O O B-toloc.city_name O O O O O O O atis_flight
+BOS क्लीवलैंड से नैशविले के लिए सभी रविवार की उड़ानों और उनके किराए की सूची बनाएं EOS\t	B-toloc.city_name O O O O O B-depart_date.day_name O O O O O O O O atis_flight;atis_airfare
+BOS कौन सी एयरलाइंस बाल्टीमोर से प्रस्थान कर रही हैं EOS\t	O B-fare_basis_code I-airline_name B-fromloc.city_name O O O O O atis_airline
+BOS कौन सी एयरलाइंस बाल्टीमोर से सैन फ्रांसिस्को तक उड़ान भरती हैं EOS\t	O B-fare_basis_code I-airline_name B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O atis_airline
+BOS बाल्टीमोर से सैन फ्रांसिस्को तक की उड़ान में कितना समय लगता है? EOS\t	B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O O O O atis_distance
+BOS सोमवार सुबह-सुबह कैनसस सिटी से अटलांटा के लिए कौन सी उड़ानें रवाना हो रही हैं EOS\t	B-depart_date.day_name O O O O B-toloc.city_name O O O B-fare_basis_code O O O O O atis_flight
+BOS कौन सी उड़ानें अटलांटा से रवाना हो रही हैं और सेंट में आ रही हैं।  EOS\t	O B-fare_basis_code O B-toloc.city_name O O O O O O O O B-airline_code O O atis_flight
+BOS कृपया सेंट से उड़ानें सूचीबद्ध करें।  EOS\t	O O O O O O atis_flight
+BOS सेंट से सूची उड़ानें।  EOS\t	O O O O atis_flight
+BOS सिनसिनाटी से टाम्पा के लिए सुबह की उड़ानों की सूची बनाएं EOS\t	B-fromloc.city_name O O O O B-depart_time.period_of_day O O O O O atis_flight
+BOS टाम्पा से सिनसिनाटी के लिए शाम की शुरुआती उड़ानों की सूची बनाएं EOS\t	O O B-fromloc.city_name O O B-depart_time.period_of_day O O O O O O atis_flight
+BOS ताम्पा से सिनसिनाटी के लिए शाम की उड़ानों की सूची बनाएं EOS\t	O O B-fromloc.city_name O O B-depart_time.period_of_day O O O O O atis_flight
+BOS फिलाडेल्फिया से अटलांटा के लिए शुक्रवार सुबह की उड़ानों की सूची बनाएं EOS\t	O O B-toloc.city_name O O B-depart_date.day_name B-depart_time.period_of_day O O O O O atis_flight
+BOS शुक्रवार दोपहर को अटलांटा से टोरंटो के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name B-depart_time.period_of_day O B-toloc.city_name O B-fromloc.city_name O O O O O O atis_flight
+BOS टोरंटो से वाशिंगटन डीसी के लिए शनिवार सुबह की उड़ानों की सूची बनाएं EOS\t	B-fromloc.city_name O B-toloc.city_name B-toloc.state_code O O B-arrive_date.day_name B-depart_time.period_of_day O O O O O atis_flight
+BOS शनिवार अपराह्न वाशिंगटन डीसी से फिलाडेल्फिया तक की उड़ानों की सूची EOS\t	B-arrive_date.day_name O B-toloc.city_name B-toloc.state_code O O O O O O O atis_flight
+BOS सुबह 10 बजे के बाद न्यूयॉर्क शहर से लॉस एंजिल्स के लिए सीधी उड़ानों की सूची बनाएं EOS\t	B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O O B-toloc.city_name I-toloc.city_name O O O O O O O atis_flight
+BOS जेएफके से लैक्स तक अमेरिकन एयरलाइंस की उड़ान 19 के लिए हवाई किराया सूचीबद्ध करें EOS\t	O O O O B-airline_name I-airline_name O O B-flight_number O O O I-transport_type O O atis_airfare;atis_flight
+BOS किराया कोड एम क्या है? EOS\t	I-transport_type O B-fare_basis_code O O atis_abbreviation
+BOS बोस्टन हवाई अड्डे से डाउनटाउन बोस्टन तक की दूरी मीलों में सूचीबद्ध करें EOS\t	B-fromloc.city_name O O O O B-fromloc.city_name O O O O O O O atis_distance
+BOS न्यूयॉर्क के ला गार्डिया हवाई अड्डे से डाउनटाउन न्यूयॉर्क शहर तक की दूरी को मीलों में सूचीबद्ध करें EOS\t	O O B-fromloc.airport_name I-fromloc.airport_name O O O O O O O O O O O O O O atis_distance
+BOS टोरंटो अंतर्राष्ट्रीय हवाई अड्डे से डाउनटाउन टोरंटो तक की दूरी को मीलों में सूचीबद्ध करें EOS\t	B-fromloc.city_name O O O O O B-fromloc.city_name O O O O O O O O atis_distance
+BOS सैन फ्रांसिस्को अंतरराष्ट्रीय हवाई अड्डे से सैन फ्रांसिस्को शहर तक की दूरी मीलों में सूचीबद्ध करें EOS\t	B-toloc.city_name I-toloc.city_name I-airline_name O O O B-toloc.city_name I-toloc.city_name O O O O O O O O atis_distance
+BOS बोस्टन शहर के लिए लिमोज़ीन दरों की सूची बनाएं EOS\t	B-fromloc.city_name O O O B-transport_type O O O O atis_ground_fare
+BOS ह्यूस्टन से मिल्वौकी के लिए शुक्रवार अपराह्न प्रस्थान करने वाली अमेरिकन एयरलाइंस की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O O O O B-depart_date.day_name O O O O B-airline_name I-airline_name O O O O O atis_flight
+BOS ह्यूस्टन से मिल्वौकी के लिए शुक्रवार अपराह्न उड़ानों की सूची EOS\t	B-toloc.city_name O O O O B-depart_date.day_name O O O O atis_flight
+BOS बुधवार को मिल्वौकी से सैन जोस तक अमेरिकन एयरलाइंस की उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name O O O B-toloc.city_name I-toloc.city_name O B-airline_name I-airline_name O O O O O atis_flight
+BOS सैन जोस से डलास के लिए शुक्रवार दोपहर को अमेरिकन एयरलाइंस की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name I-toloc.city_name O B-stoploc.city_name O O B-depart_date.day_name B-depart_time.period_of_day O B-airline_name I-airline_name O O O O O atis_flight
+BOS रविवार दोपहर को डलास से ह्यूस्टन आने वाली उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name B-depart_time.period_of_day O B-stoploc.city_name O B-toloc.city_name O O O O O O atis_flight
+BOS सिएटल से साल्ट लेक सिटी तक उड़ान भरने वाली एयरलाइनों की सूची बनाएं EOS\t	B-toloc.city_name O O O O O O O O O O O O atis_airline
+BOS विमान L10 में बैठने की क्षमता क्या है? EOS\t	O O O O O O O O atis_capacity
+BOS डेल्टा be1 के लिए बैठने की क्षमता क्या है? EOS\t	B-airline_name B-aircraft_code O O O O O O O atis_capacity
+BOS डेल्टा एल10 पर सिएटल से साल्ट लेक सिटी तक की उड़ानों की सूची बनाएं EOS\t	B-airline_name B-aircraft_code O B-toloc.city_name O O O O O O O O O O atis_flight
+BOS डेल्टा बी1 पर सिएटल से साल्ट लेक सिटी के लिए उड़ानों की सूची बनाएं EOS\t	B-airline_name O O B-toloc.city_name O O O O O O O O O O atis_flight
+BOS बोस्टन से पिट्सबर्ग के लिए प्रतिदिन उड़ानों की सूची बनाएं EOS\t	B-fromloc.city_name O B-fromloc.city_name O O O O O O O atis_flight
+BOS पिट्सबर्ग से नेवार्क के लिए प्रतिदिन उड़ानों की सूची बनाएं EOS\t	B-fromloc.city_name O B-toloc.city_name O O O O O O O atis_flight
+BOS नेवार्क से बोस्टन के लिए प्रतिदिन उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O B-fromloc.city_name O O O O O O O atis_flight
+BOS शनिवार को दोपहर 1 बजे चार्लोट हवाई अड्डे से प्रस्थान करने वाली हवाई उड़ानों की सूची बनाएं EOS\t	B-arrive_date.day_name O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O O O O O O O O O O O O atis_flight
+BOS शनिवार को दोपहर 1 बजे के आसपास चार्लोट हवाई अड्डे से प्रस्थान करने वाली हवाई उड़ानों की सूची बनाएं EOS\t	B-arrive_date.day_name O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O O O O O O O O O O O O O O atis_flight
+BOS इंडियानापोलिस से मेम्फिस तक की राउंड ट्रिप का प्रथम श्रेणी हवाई किराया सूचीबद्ध करें EOS\t	B-toloc.city_name O B-fromloc.city_name O O O O O O O O I-transport_type O O atis_airfare
+BOS किराया कोड एफ क्या है? EOS\t	I-transport_type O B-fare_basis_code O O atis_abbreviation
+BOS मेम्फिस से मियामी के लिए बुधवार शाम की उड़ानों की सूची बनाएं EOS\t	B-fromloc.city_name O B-fromloc.city_name O O B-depart_date.day_name B-depart_time.period_of_day O O O O O atis_flight
+BOS रविवार को मियामी से इंडियानापोलिस के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name O B-fromloc.city_name O B-toloc.city_name O O O O O O atis_flight
+BOS ओंटारियो कैलिफ़ोर्निया से ऑरलैंडो फ़्लोरिडा तक की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O O B-fromloc.city_name O O O O O O O atis_flight
+BOS ओंटारियो कैलिफ़ोर्निया से साल्ट लेक सिटी यूटा तक की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O O O O O B-toloc.state_name O O O O O O atis_flight
+BOS सोमवार को ओंटारियो कैलिफ़ोर्निया से साल्ट लेक सिटी यूटा के लिए उड़ान सूची EOS\t	B-depart_date.day_name O B-toloc.city_name O O O O O B-toloc.state_name O O O O atis_flight
+BOS सोमवार को साल्ट लेक सिटी यूटा से फीनिक्स एरिज़ोना तक की उड़ानों की सूची EOS\t	B-depart_date.day_name O O O O B-toloc.state_name O O B-toloc.state_name O O O O O atis_flight
+BOS मंगलवार को साल्ट लेक सिटी से फीनिक्स एरिजोना के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name O O O O O O O O O O O O O atis_flight
+BOS बुधवार को फ़ीनिक्स एरिज़ोना से ओंटारियो कैलिफ़ोर्निया तक की उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name O O B-toloc.state_name O B-toloc.city_name O O O O O O O atis_flight
+BOS बाल्टीमोर से सैन फ्रांसिस्को तक कौन सी एयरलाइंस उड़ान भरती हैं EOS\t	B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O B-fare_basis_code I-airline_name O O O atis_airline
+BOS डेट्रॉइट से सेंट तक प्रथम श्रेणी राउंड ट्रिप टिकट का किराया क्या है?  EOS\t	O O O O O O O O O O I-transport_type O O atis_airfare
+BOS डेट्रॉइट से सेंट तक एक राउंड ट्रिप प्रथम श्रेणी टिकट के लिए हवाई किराया क्या है?  EOS\t	O O O O O O O O O O O O O I-transport_type O O atis_airfare
+BOS कैनसस सिटी से अटलांटा के लिए सोमवार सुबह की उड़ानें EOS\t	O O O B-toloc.city_name O O B-depart_date.day_name B-depart_time.period_of_day O O atis_flight
+BOS अटलांटा से कैनसस सिटी के लिए सोमवार सुबह की उड़ानें EOS\t	B-toloc.city_name O O O O O B-depart_date.day_name B-depart_time.period_of_day O O atis_flight
+BOS कैनसस सिटी से अटलांटा के लिए सोमवार सुबह की उड़ानें EOS\t	O O O B-toloc.city_name O O B-depart_date.day_name B-depart_time.period_of_day O O atis_flight
+BOS अटलांटा से सेंट.  EOS\t	B-toloc.city_name O O atis_flight
+BOS अनुसूचित जनजाति।  EOS\t	O O atis_flight
+BOS अनुसूचित जनजाति।  EOS\t	O O atis_flight
+BOS क्लीवलैंड से कैनसस सिटी सोमवार अपराह्न 3 बजे से पहले पहुंचें EOS\t	B-toloc.city_name O O O B-depart_date.day_name O B-depart_time.time I-depart_time.time O B-depart_time.time_relative O atis_flight
+BOS कैनसस सिटी से क्लीवलैंड की उड़ान बुधवार शाम 5 बजे से पहले पहुंच जाएगी EOS\t	O O O B-toloc.city_name O O B-depart_date.day_name B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O atis_flight
+BOS क्लीवलैंड से नैशविले की उड़ान शुक्रवार सुबह EOS\t	B-toloc.city_name O O O O B-depart_date.day_name B-depart_time.period_of_day atis_flight
+BOS रविवार को 9 बजे से पहले नैशविले से क्लीवलैंड EOS\t	B-depart_date.day_name O B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O B-toloc.city_name atis_flight
+BOS सोमवार सुबह पिट्सबर्ग से नेवार्क के लिए प्रथम श्रेणी की उड़ानें EOS\t	B-depart_date.day_name B-depart_time.period_of_day B-fromloc.city_name O B-toloc.city_name O O O O O O atis_flight
+BOS बुधवार सुबह नेवार्क से लॉस एंजिल्स के लिए उड़ानें EOS\t	B-depart_date.day_name B-depart_time.period_of_day B-toloc.city_name O B-toloc.city_name I-toloc.city_name O O O atis_flight
+BOS गुरुवार दोपहर लॉस एंजिल्स से मिनियापोलिस EOS\t	B-depart_date.day_name B-depart_time.period_of_day B-toloc.city_name I-toloc.city_name O O atis_flight
+BOS मिनियापोलिस से पिट्सबर्ग उड़ान EOS\t	O O B-fromloc.city_name O atis_flight
+BOS मिनियापोलिस से पिट्सबर्ग प्रथम श्रेणी की उड़ान EOS\t	O O B-fromloc.city_name O O O O atis_flight
+BOS मैं मिल्वौकी से ऑरलैंडो के लिए उड़ानें चाहूंगा EOS\t	O O O B-fromloc.city_name O O O O atis_flight
+BOS एचपी का मतलब क्या है EOS\t	O O O O O atis_abbreviation
+BOS मैं ओंटारियो से टैकोमा के लिए उड़ानें चाहूंगा EOS\t	O B-toloc.city_name O O O O O O atis_flight
+BOS मैं मिनियापोलिस से सैन डिएगो के लिए उड़ानें चाहूंगा EOS\t	O O O B-toloc.city_name I-toloc.city_name O O O O atis_flight
+BOS मैं साल्ट लेक सिटी से सिनसिनाटी के लिए उड़ानें चाहूंगा EOS\t	O O O O O B-fromloc.city_name O O O O atis_flight
+BOS मैं सिनसिनाटी से साल्ट लेक सिटी तक उड़ानें देखना चाहूंगा EOS\t	O B-fromloc.city_name O O O O O O O O atis_flight
+BOS मैं न्यूयॉर्क से मियामी के लिए उड़ानें चाहता हूं EOS\t	O O O B-fromloc.city_name O O O O O atis_flight
+BOS मैं मियामी से न्यूयॉर्क के लिए उड़ानें चाहूंगा EOS\t	O B-fromloc.city_name O O O O O O atis_flight
+BOS मैं सैन फ़्रांसिस्को से सैन डिएगो के लिए प्रस्थान करने वाली एक उड़ान चाहता हूँ EOS\t	O B-toloc.city_name O O B-toloc.city_name I-toloc.city_name O O O O O O O O O atis_flight
+BOS मैं सैन डिएगो से लास वेगास के लिए उड़ानें चाहूंगा EOS\t	O B-toloc.city_name I-toloc.city_name O B-toloc.city_name I-toloc.city_name O O O O atis_flight
+BOS मुझे सैन डिएगो से लास वेगास के लिए उड़ान चाहिए EOS\t	O B-toloc.city_name I-toloc.city_name O B-toloc.city_name I-toloc.city_name O O O O atis_flight
+BOS मैं लास वेगास से सैन फ्रांसिस्को के लिए उड़ानें चाहूंगा EOS\t	O B-toloc.city_name I-toloc.city_name O B-toloc.city_name I-toloc.city_name O O O O atis_flight
+BOS किराया कोड बीएन का क्या मतलब है EOS\t	I-transport_type O O O O O O atis_abbreviation
+BOS मैं ऐसी एयरलाइन लेना चाहूंगा जो टोरंटो, डेट्रॉइट और सेंट तक उड़ान भरती हो।  EOS\t	O O I-airline_name O O O O O O O O O O O atis_airline
+BOS मुझे टोरंटो से डेट्रॉइट के लिए उड़ान चाहिए EOS\t	O B-fromloc.city_name O O O O O O atis_flight
+BOS मुझे डेट्रॉइट से सेंट तक की उड़ान चाहिए।  EOS\t	O O O O O O O O atis_flight
+BOS मुझे टोरंटो से सेंट तक की उड़ान चाहिए।  EOS\t	O B-fromloc.city_name O O O O O O atis_flight
+BOS मैं सैन फ्रांसिस्को से लॉन्ग बीच तक उड़ानें चाहूंगा EOS\t	O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS मैं सैन फ्रांसिस्को से सैन डिएगो तक जाने वाली उड़ानें चाहूंगा EOS\t	O B-toloc.city_name I-toloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O atis_flight
+BOS मुझे सैन फ्रांसिस्को से सेंट तक की उड़ान चाहिए।  EOS\t	O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS मुझे मिल्वौकी से ऑरलैंडो के लिए बुधवार दोपहर 6 बजे के बाद छूटने वाली एकतरफ़ा उड़ान दिखाओ EOS\t	O O O B-fromloc.city_name O O B-depart_date.day_name B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O O O O atis_flight
+BOS मुझे बुधवार को मिल्वौकी से ऑरलैंडो के लिए एकतरफ़ा उड़ानें दिखाएँ EOS\t	O B-depart_date.day_name O O O B-fromloc.city_name O O O O O atis_flight
+BOS मुझे कोलंबस से शिकागो की प्रथम श्रेणी की उड़ानें दिखाओ जो सुबह 10 बजे से पहले रवाना होती हैं EOS\t	O O O B-toloc.city_name O O O O O O O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O O atis_flight
+BOS मुझे सेंट के बीच सबसे सस्ती राउंड ट्रिप दिखाओ।  EOS\t	O O O O O O O O O atis_flight
+BOS मुझे कैनसस सिटी से फ़ीनिक्स तक नॉनस्टॉप उड़ानें दिखाओ EOS\t	O O O O O O O O O atis_flight
+BOS एयरलाइन ww क्या है EOS\t	I-airline_name O O O atis_airline
+BOS मुझे न्यूयॉर्क से मियामी तक की सबसे सस्ती प्रथम श्रेणी यात्रा दिखाओ EOS\t	O O O B-fromloc.city_name O O O O O O I-round_trip O atis_flight
+BOS अब मुझे न्यूयॉर्क से मियामी तक की सभी यात्राएँ दिखाएँ EOS\t	O O O O B-fromloc.city_name O O O O O atis_flight
+BOS मुझे सैन फ्रांसिस्को से ह्यूस्टन के लिए सबसे सस्ती एकतरफ़ा उड़ान दिखाओ EOS\t	O B-toloc.city_name I-toloc.city_name O B-toloc.city_name O O O O O O O atis_flight
+BOS अब मुझे ह्यूस्टन से बोस्टन के लिए सबसे सस्ती एकतरफ़ा उड़ान दिखाएँ EOS\t	O O B-toloc.city_name O B-fromloc.city_name O O O O O O O atis_flight
+BOS मुझे ह्यूस्टन से बोस्टन तक का सबसे सस्ता राउंड ट्रिप किराया दिखाओ EOS\t	O B-toloc.city_name O B-fromloc.city_name O O O O O O I-transport_type O atis_airfare
+BOS मुझे सैन फ्रांसिस्को से ह्यूस्टन तक का सबसे सस्ता राउंड ट्रिप किराया दिखाओ EOS\t	O B-toloc.city_name I-toloc.city_name O B-toloc.city_name O O O O O O I-transport_type O atis_airfare
+BOS मुझे अट्ठाईस फरवरी 1994 को सैन फ्रांसिस्को से ह्यूस्टन तक का सबसे सस्ता राउंड ट्रिप किराया दिखाओ EOS\t	O O O B-depart_date.year O B-toloc.city_name I-toloc.city_name O B-toloc.city_name O O O O O O I-transport_type O atis_airfare
+BOS मुझे अट्ठाईस फरवरी 1994 को सैन फ्रांसिस्को से ह्यूस्टन तक का एक तरफ का सबसे सस्ता किराया दिखाओ EOS\t	O O O B-depart_date.year O B-toloc.city_name I-toloc.city_name O B-toloc.city_name O O O O O O O I-transport_type O atis_airfare
+BOS अब मुझे सोमवार दोपहर को ह्यूस्टन में जमीनी परिवहन दिखाओ EOS\t	O O B-depart_date.day_name B-depart_time.period_of_day O B-toloc.city_name O O O O atis_ground_service
+BOS अब मुझे ह्यूस्टन से बोस्टन के लिए एकतरफ़ा उड़ानें दिखाएँ EOS\t	O O B-toloc.city_name O B-fromloc.city_name O O O O O atis_flight
+BOS और अब मुझे जमीनी परिवहन दिखाएँ जो मुझे देर रात बोस्टन पहुँच सकता है EOS\t	O O O O O O O O B-depart_time.period_of_day B-depart_time.period_of_day B-fromloc.city_name O O O atis_ground_service
+BOS मुझे वे एयरलाइंस दिखाएँ जिनकी टोरंटो और डेट्रॉइट के बीच डेट्रॉइट और सेंट के बीच उड़ानें हैं।  EOS\t	O O I-airline_name O O B-fromloc.city_name O O O O O O O O O O O atis_airline
+BOS मुझे डेल्टा नॉर्थवेस्ट यूएस एयर और यूनाइटेड एयरलाइंस पर टोरंटो से डेट्रॉइट तक आने-जाने का किराया दिखाओ EOS\t	O B-airline_name O O O O B-airline_name I-airline_name O B-fromloc.city_name O O O O O I-transport_type O atis_airfare
+BOS मुझे डेट्रॉइट और सेंट के बीच उड़ानें दिखाओ।  EOS\t	O O O O O O O O atis_flight
+BOS मुझे मॉन्ट्रियल से ऑरलैंडो और लॉन्ग बीच तक की उड़ानें दिखाओ EOS\t	O B-fromloc.city_name O B-fromloc.city_name O O O O O O O atis_flight
+BOS मुझे मॉन्ट्रियल से ऑरलैंडो तक की उड़ानें दिखाओ EOS\t	O B-fromloc.city_name O B-fromloc.city_name O O O O atis_flight
+BOS मुझे जून में शुक्रवार दोपहर को न्यूयॉर्क से क्लीवलैंड के लिए एक उड़ान की आवश्यकता है EOS\t	O B-depart_date.month_name O B-depart_date.day_name B-depart_time.period_of_day O O O B-toloc.city_name O O O O O O O atis_flight
+BOS मुझे शनिवार शाम को न्यूयॉर्क से लॉस एंजिल्स के लिए यूएस एयर पर एक उड़ान चाहिए EOS\t	O B-arrive_date.day_name B-depart_time.period_of_day O O O B-toloc.city_name I-toloc.city_name O O O O O O O O atis_flight
+BOS मैं शनिवार शाम को अमेरिकी हवाई मार्ग से न्यूयॉर्क से लॉस एंजिल्स के लिए एक लाल आँख वाली उड़ान चाहता हूँ EOS\t	O B-arrive_date.day_name B-depart_time.period_of_day O B-airline_name O O O O O B-toloc.city_name I-toloc.city_name O O O B-flight_mod I-flight_mod O O O O atis_flight
+BOS मैं शनिवार की सुबह न्यूयॉर्क से लॉस एंजिल्स के लिए अमेरिकी हवाई उड़ान चाहता हूँ EOS\t	O B-arrive_date.day_name O B-depart_time.period_of_day O O B-toloc.city_name I-toloc.city_name O O B-airline_name O O O O atis_flight
+BOS मुझे सोमवार सुबह सैन फ्रांसिस्को से मिल्वौकी के लिए उड़ान चाहिए EOS\t	O B-depart_date.day_name B-depart_time.period_of_day B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS आपका क्या मतलब है EOS\t	O O O O atis_abbreviation
+BOS मुझे सोमवार रात को मिल्वौकी से वाशिंगटन डीसी के लिए उड़ान चाहिए EOS\t	O B-depart_date.day_name B-depart_time.period_of_day O O O B-toloc.city_name B-toloc.state_code O O O O atis_flight
+BOS मंगलवार की सुबह मिल्वौकी से वाशिंगटन डीसी के लिए उड़ानें कैसी रहेंगी? EOS\t	B-depart_date.day_name O B-depart_time.period_of_day O O B-toloc.city_name B-toloc.state_code O O O O O atis_flight
+BOS मंगलवार सुबह मिल्वौकी से वाशिंगटन डी.सी. की उड़ान संख्या 382 में क्या भोजन है EOS\t	B-depart_date.day_name B-depart_time.period_of_day O O B-toloc.city_name O O O O B-flight_number O O B-meal O atis_meal
+BOS मुझे वाशिंगटन डीसी में एक कार किराए पर लेनी होगी EOS\t	O B-toloc.city_name B-toloc.state_code O O B-transport_type O O O O atis_ground_service
+BOS क्या मुझे मंगलवार रात को वाशिंगटन डीसी से ओकलैंड के लिए उड़ान मिल सकती है? EOS\t	O O B-depart_date.day_name B-depart_time.period_of_day O B-toloc.city_name B-toloc.state_code O B-toloc.city_name O O O O O O atis_flight
+BOS बुधवार की सुबह डीसी से ओकलैंड तक कैसा रहेगा EOS\t	B-depart_date.day_name O B-depart_time.period_of_day B-toloc.state_code O B-toloc.city_name O O O atis_flight
+BOS कोलंबस से मिल्वौकी तक हवाई जहाज़ से उड़ान भरने में कितना खर्च होता है? EOS\t	O O O O O O O O O O O O O O atis_airfare
+BOS q का क्या मतलब है EOS\t	O O O O O atis_abbreviation
+BOS कोलंबस से सेंट तक उड़ान भरने में कितना खर्च होता है?  EOS\t	O O O O O O O O O O O atis_airfare
+BOS कोलंबस से सेंट तक की सबसे सस्ती उड़ान कौन सी है?  EOS\t	O O O O O O O O O B-fare_basis_code O atis_flight
+BOS टीडब्ल्यूए पर कोलंबस से सेंट तक की सबसे सस्ती राउंड ट्रिप उड़ान कौन सी है?  EOS\t	O O O O O O O O O O O O O B-fare_basis_code O atis_flight
+BOS मैं मिल्वौकी से लॉस एंजिल्स के लिए उड़ान भरना चाहता हूं EOS\t	O O O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS क्या मुझे मिल्वौकी से ऑरलैंडो के लिए सबसे छोटी उड़ान मिल सकती है? EOS\t	O O O O B-fromloc.city_name O O O O O O O O atis_flight
+BOS मिल्वौकी से लॉन्ग बीच तक की सबसे छोटी उड़ान कौन सी है? EOS\t	O O O O O O O O O O B-fare_basis_code O atis_flight
+BOS एम का मतलब क्या है EOS\t	B-fare_basis_code O O O O atis_abbreviation
+BOS एपी 57 का क्या मतलब है EOS\t	B-restriction_code I-restriction_code O O O O atis_abbreviation
+BOS मिल्वौकी से सेंट तक की सबसे छोटी उड़ान कौन सी है?  EOS\t	O O O O O O O O O B-fare_basis_code O atis_flight
+BOS मिल्वौकी से लॉन्ग बीच तक की सबसे छोटी उड़ान कौन सी है? EOS\t	O O O O O O O O O O B-fare_basis_code O atis_flight
+BOS मिल्वौकी से सैन डिएगो के लिए सबसे छोटी उड़ान कौन सी है? EOS\t	O O B-toloc.city_name I-toloc.city_name O O O O O O B-fare_basis_code O atis_flight
+BOS एपी 20 का क्या मतलब है EOS\t	B-restriction_code I-restriction_code O O O O atis_abbreviation
+BOS क्या मुझे आज सैन फ्रांसिस्को से डेट्रॉइट मिशिगन के लिए उड़ान मिल सकती है? EOS\t	O O B-depart_date.today_relative B-toloc.city_name I-toloc.city_name O O B-toloc.state_name O O O O O O atis_flight
+BOS सैन फ्रांसिस्को से डेट्रॉइट के लिए आज सबसे सस्ती उड़ान कौन सी है? EOS\t	B-toloc.city_name I-toloc.city_name O O O O B-depart_date.today_relative O O O O B-fare_basis_code O atis_flight
+BOS मैं सैन फ्रांसिस्को से मिल्वौकी और मिल्वौकी से डेनवर तक उड़ान भरना चाहता हूं EOS\t	O B-toloc.city_name I-toloc.city_name O O O O O B-toloc.city_name O O O O O atis_flight
+BOS सैन फ्रांसिस्को से मिल्वौकी के लिए सबसे सस्ती उड़ान कौन सी है? EOS\t	B-toloc.city_name I-toloc.city_name O O O O O O O O B-fare_basis_code O atis_flight
+BOS मुझे मिल्वौकी में एक कार किराए पर लेनी है EOS\t	O O O O B-transport_type O O O O atis_ground_service
+BOS मिल्वौकी से डेनवर के लिए कल सबसे सस्ती उड़ान कौन सी है? EOS\t	O O B-toloc.city_name O O B-depart_date.today_relative O O O O B-fare_basis_code O atis_flight
+BOS डेनवर में कौन सा जमीनी परिवहन उपलब्ध है? EOS\t	B-toloc.city_name O O O O O O O atis_ground_service
+BOS सैन फ्रांसिस्को से डेनवर के लिए सबसे सस्ती उड़ान कौन सी है? EOS\t	B-toloc.city_name I-toloc.city_name O B-toloc.city_name O O O O O O B-fare_basis_code O atis_flight
+BOS क्लीवलैंड से कौन सी उड़ानें रवाना होती हैं और डलास जाती हैं EOS\t	B-toloc.city_name O O B-fare_basis_code O O O O O B-stoploc.city_name O O atis_flight
+BOS मुझे सेंट से सभी नॉनस्टॉप उड़ानें दिखाओ।  EOS\t	O O O O O O O atis_flight
+BOS हमारी कौन सी एयरलाइन है EOS\t	O O B-fare_basis_code I-airline_name O atis_airline
+BOS मुझे टोरंटो और सैन डिएगो के बीच उड़ानें दिखाओ EOS\t	O B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O atis_flight
+BOS पीएचएल क्या है? EOS\t	B-airport_code O O atis_abbreviation
+BOS एमसीआई क्या है? EOS\t	B-airport_code O O atis_abbreviation
+BOS मुझे ओकलैंड और साल्ट लेक सिटी के बीच उड़ानें दिखाओ EOS\t	O B-toloc.city_name O O O O O O O O atis_flight
+BOS सा का क्या मतलब नहीं है EOS\t	O O O O O O atis_abbreviation
+BOS ओकलैंड और साल्ट लेक सिटी के बीच सबसे पुरानी दैनिक उड़ान कौन सी है? EOS\t	B-toloc.city_name O O O O O O O O B-flight_days O O B-fare_basis_code O atis_flight
+BOS डीएल कौन सी एयरलाइन है? EOS\t	O O B-fare_basis_code I-airline_name O atis_airline
+BOS ओकलैंड और साल्ट लेक सिटी के बीच नवीनतम दैनिक उड़ान क्या है? EOS\t	B-toloc.city_name O O O O O O B-flight_mod B-flight_days O O O atis_flight
+BOS मुझे लॉस एंजिल्स और डलास के बीच उड़ानें दिखाओ EOS\t	O B-toloc.city_name I-toloc.city_name O B-stoploc.city_name O O O O atis_flight
+BOS डलास फोर्ट वर्थ हवाई अड्डे से डाउनटाउन डलास तक कौन सा जमीनी परिवहन उपलब्ध है EOS\t	B-stoploc.city_name O O O O O O B-stoploc.city_name O O O O O O O atis_ground_service
+BOS एक L1011 विमान में कितने यात्री बैठ सकते हैं? EOS\t	O O O O O O O O O atis_capacity
+BOS DC9 की बैठने की क्षमता क्या है? EOS\t	O O O O O O O atis_capacity
+BOS डलास और फ़ीनिक्स के बीच कौन सी उड़ानें हैं? EOS\t	B-stoploc.city_name O O O O O B-fare_basis_code O O atis_flight
+BOS फ़ीनिक्स हवाई अड्डे और डाउनटाउन फ़ीनिक्स के बीच कौन सा ज़मीनी परिवहन उपलब्ध है EOS\t	O O O O O O O O O O O O O O atis_ground_service
+BOS विमान m80 में बैठने की क्षमता क्या है? EOS\t	O O O O O O O O atis_capacity
+BOS क्या डीसी10 विमान का उपयोग करके डलास और फीनिक्स के बीच कोई उड़ानें हैं EOS\t	O O O O O O B-stoploc.city_name O O O O O O O atis_flight
+BOS कौन सी एयरलाइन है ए EOS\t	O B-fare_basis_code I-airline_name O O atis_airline
+BOS मुझे मिल्वौकी और इंडियाना के बीच उड़ानें दिखाओ EOS\t	O O O B-toloc.state_name O O O O atis_flight
+BOS मिल्वौकी और पिट्सबर्ग के बीच कौन सी उड़ानें हैं? EOS\t	O O B-fromloc.city_name O O O B-fare_basis_code O O atis_flight
+BOS पिट्सबर्ग हवाई अड्डे और डाउनटाउन पिट्सबर्ग के बीच कौन सा जमीनी परिवहन उपलब्ध है EOS\t	B-fromloc.city_name O O O O B-fromloc.city_name O O O O O O O O atis_ground_service
+BOS मुझे पिट्सबर्ग और वाशिंगटन डीसी के बीच उड़ानें दिखाओ EOS\t	O B-fromloc.city_name O B-toloc.city_name B-toloc.state_code O O O O atis_flight
+BOS डीसीए और डाउनटाउन वाशिंगटन के बीच कौन सा जमीनी परिवहन उपलब्ध है EOS\t	B-airport_code O O B-toloc.city_name O O O O O O O O atis_ground_service
+BOS डीसीए और मिल्वौकी के बीच कौन सी उड़ानें हैं? EOS\t	B-airport_code O O O O O B-fare_basis_code O O atis_flight
+BOS मिल्वौकी हवाई अड्डे और डाउनटाउन मिल्वौकी के बीच कौन सा जमीनी परिवहन उपलब्ध है EOS\t	O O O O O O O O O O O O O O atis_ground_service
+BOS क्लीवलैंड से डलास के लिए दोपहर से पहले रवाना होने वाली उड़ान में उपयोग किए जाने वाले विमान के प्रकार का निर्धारण करें EOS\t	B-toloc.city_name O B-stoploc.city_name O O B-depart_time.period_of_day O B-depart_time.time_relative O O O O O O O O O O O O O O O atis_aircraft
+BOS सेंट के बीच एक उड़ान खोजें।  EOS\t	O O O O O O atis_flight
+BOS डेल्टा एयरलाइंस पर टोरंटो से सैन डिएगो के लिए एक उड़ान सूचीबद्ध करें EOS\t	B-airline_name I-airline_name O B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS टोरंटो से सैन डिएगो के लिए अमेरिकी एयरलाइंस की एक उड़ान सूचीबद्ध करें EOS\t	B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O B-airline_name I-airline_name O O O O O atis_flight
+BOS टोरंटो से सैन डिएगो के लिए एक उड़ान सूचीबद्ध करें EOS\t	B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS 1700 बुधवार के बाद ओकलैंड से साल्ट लेक सिटी के लिए प्रस्थान करने वाली उड़ानों की सूची बनाएं EOS\t	B-depart_time.time B-depart_date.day_name O B-depart_time.time_relative B-toloc.city_name O O O O O O O O O O O O O atis_flight
+BOS गुरुवार आधी रात के बाद ओकलैंड से साल्ट लेक सिटी के लिए प्रस्थान करने वाली उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name O B-depart_time.period_of_day O B-depart_time.time_relative B-toloc.city_name O O O O O O O O O O O O O atis_flight
+BOS फ़ीनिक्स और लास वेगास के बीच उड़ानों की सूची बनाएं EOS\t	O O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS लास वेगास से डेनवर तक की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name I-toloc.city_name O B-toloc.city_name O O O O O O atis_flight
+BOS 1200 से पहले मिल्वौकी से वाशिंगटन डीसी तक की उड़ानों की सूची बनाएं EOS\t	B-depart_time.time O B-depart_time.time_relative O O B-toloc.city_name B-toloc.state_code O O O O O O atis_flight
+BOS 1800 के बाद वाशिंगटन डीसी से पिट्सबर्ग तक जाने वाली उड़ानों की सूची बनाएं EOS\t	B-depart_time.time O B-depart_time.time_relative B-toloc.city_name B-toloc.state_code O B-fromloc.city_name O O O O O O O atis_flight
+BOS वाशिंगटन डीसी से पिट्सबर्ग तक की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name B-toloc.state_code O B-fromloc.city_name O O O O O O atis_flight
+BOS पिट्सबर्ग और मिल्वौकी के बीच उड़ानों की सूची बनाएं EOS\t	B-fromloc.city_name O O O O O O O O atis_flight
+BOS मुझे वाशिंगटन डीसी से सैन डिएगो के लिए उड़ान चाहिए EOS\t	O B-toloc.city_name B-toloc.state_code O B-toloc.city_name I-toloc.city_name O O O O atis_flight
+BOS मैं क्लीवलैंड से डलास तक उड़ान भरना चाहता हूं EOS\t	O B-toloc.city_name O B-stoploc.city_name O O O O O atis_flight
+BOS मैं वाशिंगटन डीसी से फीनिक्स एरिजोना के लिए उड़ान भरना चाहता हूं EOS\t	O B-toloc.city_name B-toloc.state_code O O O O O O O O O atis_flight
+BOS मुझे फ़ीनिक्स से अटलांटा के लिए उड़ान चाहिए EOS\t	O O O B-toloc.city_name O O O O atis_flight
+BOS मैं अटलांटा से सैन डिएगो के लिए उड़ान भरना चाहूंगा EOS\t	O B-toloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O atis_flight
+BOS मैं सैन डिएगो से सिएटल के लिए उड़ान भरना चाहूंगा EOS\t	O B-toloc.city_name I-toloc.city_name O B-toloc.city_name O O O O O atis_flight
+BOS मैं ऑरलैंडो से कैनसस सिटी के लिए उड़ान भरना चाहूंगा EOS\t	O B-fromloc.city_name O O O O O O O O atis_flight
+BOS मुझे कैनसस सिटी से मिनियापोलिस के लिए उड़ान चाहिए EOS\t	O O O O O O O O O atis_flight
+BOS मुझे सैन डिएगो से वाशिंगटन डीसी के लिए उड़ान चाहिए EOS\t	O B-toloc.city_name I-toloc.city_name O B-toloc.city_name B-toloc.state_code O O O O atis_flight
+BOS मुझे वाशिंगटन डीसी से सैन डिएगो के लिए उड़ान चाहिए EOS\t	O B-toloc.city_name B-toloc.state_code O B-toloc.city_name I-toloc.city_name O O O O atis_flight
+BOS मुझे सैन डिएगो से वाशिंगटन डीसी तक एक राउंड ट्रिप फ्लाइट और किराया चाहिए EOS\t	O B-toloc.city_name I-toloc.city_name O B-toloc.city_name B-toloc.state_code O O O O O O I-transport_type O atis_flight;atis_airfare
+BOS मुझे अटलांटा से वाशिंगटन डीसी तक एक राउंड ट्रिप चाहिए और किराया सुबह निकल जाएगा EOS\t	O B-toloc.city_name O B-toloc.city_name B-toloc.state_code O O O O O O I-transport_type B-depart_time.period_of_day O O atis_flight;atis_airfare
+BOS मुझे फीनिक्स से वाशिंगटन डीसी तक एक राउंड ट्रिप चाहिए और किराया सुबह निकल जाएगा EOS\t	O O O B-toloc.city_name B-toloc.state_code O O O O O O I-transport_type B-depart_time.period_of_day O O atis_flight;atis_airfare
+BOS वाशिंगटन डीसी से बोस्टन के लिए उड़ान का सबसे कम किराया क्या है? EOS\t	B-toloc.city_name B-toloc.state_code O B-fromloc.city_name O O O O O B-cost_relative I-transport_type O O atis_airfare
+BOS वाशिंगटन डीसी से मॉन्ट्रियल तक का सबसे कम किराया क्या है? EOS\t	B-toloc.city_name B-toloc.state_code O B-fromloc.city_name O O O B-cost_relative I-transport_type O O atis_airfare
+BOS टोरंटो से वाशिंगटन डी.सी. तक का सबसे कम किराया क्या है? EOS\t	B-fromloc.city_name O B-toloc.city_name O O O O B-cost_relative I-transport_type O O atis_airfare
+BOS मुझे मॉन्ट्रियल से वाशिंगटन डीसी के लिए उड़ान चाहिए EOS\t	O B-fromloc.city_name O B-toloc.city_name B-toloc.state_code O O O O atis_flight
+BOS मैं नैशविले से सिएटल के लिए एक उड़ान चाहता हूं जो दोपहर 3 बजे से पहले पहुंचे EOS\t	O O O B-toloc.city_name O O O O O O O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O B-depart_time.time_relative O atis_flight
+BOS मैं मेम्फिस से सिएटल के लिए एक उड़ान चाहता हूं जो दोपहर 3 बजे से पहले आए EOS\t	O B-fromloc.city_name O B-toloc.city_name O O O O O O O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O B-depart_time.time_relative O atis_flight
+BOS मुझे इंडियानापोलिस से सिएटल के लिए दोपहर 1205 बजे सिएटल पहुंचने वाली उड़ान चाहिए EOS\t	O B-toloc.city_name O B-toloc.city_name O O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time B-toloc.city_name O O O O atis_flight
+BOS मैं मेम्फिस से सिएटल तक की हवाई यात्रा चाहता हूं EOS\t	O B-fromloc.city_name O B-toloc.city_name O O O I-round_trip O O atis_flight
+BOS मैं नैशविले से सिएटल के लिए उड़ान भरना चाहता हूं और मैं राउंड ट्रिप का सबसे सस्ता किराया चाहता हूं EOS\t	O O O B-toloc.city_name O O O O O O O O O O O O O I-transport_type O O atis_flight
+BOS मैं सबसे सस्ते किराये पर मेम्फिस से सिएटल तक की राउंड ट्रिप उड़ान भरना चाहता हूं EOS\t	O O O B-transport_type O B-fromloc.city_name O B-toloc.city_name O O O O O O O O atis_flight
+BOS मैं सबसे सस्ते किराये पर इंडियानापोलिस से सिएटल तक की राउंड ट्रिप उड़ान भरना चाहता हूं EOS\t	O O O B-transport_type O B-toloc.city_name O B-toloc.city_name O O O O O O O O atis_flight
+BOS कृपया ऑरलैंडो से फिलाडेल्फिया के लिए उड़ानें सूचीबद्ध करें EOS\t	O B-fromloc.city_name O O O O O O O atis_flight
+BOS कृपया सैन फ्रांसिस्को से चार्लोट के लिए उड़ानें सूचीबद्ध करें EOS\t	O B-toloc.city_name I-toloc.city_name O O O O O O O atis_flight
+BOS कृपया मिल्वौकी से फिलाडेल्फिया के लिए उड़ानें सूचीबद्ध करें EOS\t	O O O O O O O O O atis_flight
+BOS कृपया फिलाडेल्फिया से सैन फ्रांसिस्को के लिए उड़ानें सूचीबद्ध करें EOS\t	O O O B-toloc.city_name I-toloc.city_name O O O O O atis_flight
+BOS कृपया मिल्वौकी के लिए जमीनी परिवहन दिखाएं EOS\t	O O O O O O O atis_ground_service
+BOS कृपया सैन फ्रांसिस्को से मिल्वौकी के लिए उड़ानें सूचीबद्ध करें EOS\t	O B-toloc.city_name I-toloc.city_name O O O O O O O atis_flight
+BOS ह्यूस्टन से डेनवर तक की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O B-toloc.city_name O O O O O O atis_flight
+BOS ह्यूस्टन से फीनिक्स तक की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O O O O O O O O atis_flight
+BOS फ़ीनिक्स से ह्यूस्टन तक की उड़ानों की सूची बनाएं EOS\t	O O B-toloc.city_name O O O O O O atis_flight
+BOS नेवार्क से ह्यूस्टन तक की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O B-toloc.city_name O O O O O O atis_flight
+BOS डेनवर से ह्यूस्टन तक उड़ानें दिखाएं EOS\t	B-toloc.city_name O B-toloc.city_name O O O atis_flight
+BOS सेंट से उड़ानें दिखाएं।  EOS\t	O O O O atis_flight
+BOS ऑरलैंडो से कैनसस सिटी तक उड़ानें दिखाएं EOS\t	B-fromloc.city_name O O O O O O atis_flight
+BOS कैनसस सिटी से मिनियापोलिस तक उड़ानें दिखाएं EOS\t	O O O O O O O atis_flight
+BOS कैनसस सिटी से ऑरलैंडो तक उड़ानें दिखाएं EOS\t	O O O B-fromloc.city_name O O O atis_flight
+BOS मिनियापोलिस से कैनसस सिटी तक उड़ानें दिखाएं EOS\t	O O O O O O O atis_flight
+BOS कैनसस सिटी से ऑरलैंडो तक उड़ानें दिखाएं EOS\t	O O O B-fromloc.city_name O O O atis_flight
+BOS वाशिंगटन डीसी से बोस्टन तक की उड़ानों की सूची EOS\t	B-toloc.city_name B-toloc.state_code O B-fromloc.city_name O O O O O atis_flight
+BOS वाशिंगटन डीसी से मॉन्ट्रियल तक के किराये की सूची बनाएं EOS\t	B-toloc.city_name B-toloc.state_code O B-fromloc.city_name O O B-transport_type O O O atis_airfare
+BOS वाशिंगटन डीसी से मॉन्ट्रियल तक की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name B-toloc.state_code O B-fromloc.city_name O O O O O O atis_flight
+BOS वाशिंगटन डीसी से टोरंटो तक के किराये की सूची बनाएं जो अच्छा होना चाहिए EOS\t	B-toloc.city_name B-toloc.state_code O B-fromloc.city_name O O B-transport_type O O O O O O O atis_airfare
+BOS वाशिंगटन डीसी से बोस्टन तक के किराये की सूची EOS\t	B-toloc.city_name B-toloc.state_code O B-fromloc.city_name O O B-transport_type O O atis_airfare
+BOS वाशिंगटन डीसी से मॉन्ट्रियल तक की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name B-toloc.state_code O B-fromloc.city_name O O O O O O atis_flight
+BOS वाशिंगटन डीसी से टोरंटो तक की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name B-toloc.state_code O B-fromloc.city_name O O O O O O atis_flight
+BOS टोरंटो से वाशिंगटन डीसी तक की उड़ानों की सूची बनाएं EOS\t	B-fromloc.city_name O B-toloc.city_name B-toloc.state_code O O O O O O atis_flight
+BOS ओकलैंड से साल्ट लेक सिटी के लिए उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O O O O O O O O O O atis_flight
+BOS डलास से फीनिक्स तक कौन सी उड़ानें जाती हैं EOS\t	B-stoploc.city_name O O O O B-fare_basis_code O O O atis_flight
+BOS फ़ीनिक्स से साल्ट लेक सिटी तक कौन सी उड़ानें जाती हैं EOS\t	O O O O O O O B-fare_basis_code O O O atis_flight
+BOS मुझे मिल्वौकी से डेनवर के लिए शीघ्र उड़ान चाहिए EOS\t	O O O B-toloc.city_name O O O O O atis_flight
+BOS डेनवर में किस प्रकार का जमीनी परिवहन उपलब्ध है? EOS\t	B-toloc.city_name O O O O O O O O atis_ground_service
+BOS डेनवर से सेंट तक कौन सी उड़ानें जाती हैं?  EOS\t	B-toloc.city_name O O O O B-fare_basis_code O O O atis_flight
+BOS क्या सेंट में जमीनी परिवहन उपलब्ध है?  EOS\t	O O O O O O O atis_ground_service
+BOS मुझे सेंट से उड़ान भरनी है.  EOS\t	O O O O O O atis_flight
+BOS वाशिंगटन से सिएटल तक उड़ानें EOS\t	B-toloc.city_name O B-toloc.city_name O O atis_flight
+BOS अटलांटा से सिएटल के लिए उड़ानें EOS\t	B-toloc.city_name O B-toloc.city_name O O O atis_flight
+BOS सैन डिएगो से सिएटल तक उड़ानें EOS\t	B-toloc.city_name I-toloc.city_name O B-toloc.city_name O O atis_flight
+BOS मुझे फ़ीनिक्स से डेनवर तक की उड़ान की जानकारी चाहिए EOS\t	O O O B-toloc.city_name O O O O O O atis_flight
+BOS कृपया क्या मुझे साल्ट लेक सिटी से फीनिक्स तक की उड़ानों के बारे में जानकारी मिल सकती है EOS\t	O O O O O O O O O O O O O O O O O O atis_flight
+BOS कृपया क्या मुझे पिट्सबर्ग से फीनिक्स तक की उड़ानों के बारे में जानकारी मिल सकती है EOS\t	O O O B-fromloc.city_name O O O O O O O O O O O O atis_flight
+BOS मुझे वाशिंगटन डीसी से डेनवर तक जाने वाली उड़ानों के बारे में जानकारी चाहिए EOS\t	O B-toloc.city_name B-toloc.state_code O B-toloc.city_name O O O O O O O O O atis_flight
+BOS मुझे वाशिंगटन से बोस्टन के लिए शनिवार को रवाना होने वाली उड़ानों के बारे में जानकारी चाहिए EOS\t	O B-toloc.city_name O B-fromloc.city_name O O B-arrive_date.day_name O O O O O O O O O O atis_flight
+BOS मुझे शनिवार को वाशिंगटन से मॉन्ट्रियल के लिए उड़ान चाहिए EOS\t	O B-arrive_date.day_name O B-toloc.city_name O B-fromloc.city_name O O O O atis_flight
+BOS मुझे शनिवार को वाशिंगटन से टोरंटो की उड़ानों का किराया चाहिए EOS\t	O B-arrive_date.day_name O B-toloc.city_name O B-fromloc.city_name O O O I-transport_type O atis_airfare
+BOS मैं शनिवार को बोस्टन से वाशिंगटन जाना चाहता हूँ EOS\t	O B-arrive_date.day_name O B-fromloc.city_name O B-toloc.city_name O O O atis_flight
+BOS मुझे क्लीवलैंड से डलास के लिए एक उड़ान चाहिए जो दोपहर से पहले रवाना हो, देखें कि क्या बहुत अधिक जानकारी है EOS\t	O B-toloc.city_name O B-stoploc.city_name O O O O O O B-depart_time.period_of_day O B-depart_time.time_relative O O O O O O B-mod O O atis_flight
+BOS वाशिंगटन से बोस्टन तक का किराया प्राप्त करें EOS\t	B-toloc.city_name O B-fromloc.city_name O O I-transport_type O O atis_airfare
+BOS वाशिंगटन से बोस्टन तक का शनिवार का किराया प्राप्त करें EOS\t	B-toloc.city_name O B-fromloc.city_name O O B-arrive_date.day_name O I-transport_type O O atis_airfare
+BOS वाशिंगटन से मॉन्ट्रियल तक का किराया प्राप्त करें EOS\t	B-toloc.city_name O B-fromloc.city_name O O I-transport_type O O atis_airfare
+BOS वाशिंगटन से मॉन्ट्रियल तक का शनिवार का किराया प्राप्त करें EOS\t	B-toloc.city_name O B-fromloc.city_name O O B-arrive_date.day_name O I-transport_type O O atis_airfare
+BOS वाशिंगटन से टोरंटो तक का शनिवार का किराया प्राप्त करें EOS\t	B-toloc.city_name O B-fromloc.city_name O O B-arrive_date.day_name O I-transport_type O O atis_airfare
+BOS वाशिंगटन से टोरंटो तक का शनिवार का किराया प्राप्त करें EOS\t	B-toloc.city_name O B-fromloc.city_name O O B-arrive_date.day_name O I-transport_type O O atis_airfare
+BOS वाशिंगटन से बोस्टन के लिए शनिवार की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O B-fromloc.city_name O O B-arrive_date.day_name O O O O O atis_flight
+BOS बोस्टन से वाशिंगटन के लिए शनिवार की उड़ानों की सूची बनाएं EOS\t	B-fromloc.city_name O B-toloc.city_name O O B-arrive_date.day_name O O O O O atis_flight
+BOS मिल्वौकी से डीटीडब्ल्यू के लिए उड़ानें प्राप्त करें EOS\t	O O O O O O O O atis_flight
+BOS मिल्वौकी से डेट्रॉइट तक की उड़ानों की सूची बनाएं EOS\t	O O O O O O O O O atis_flight
+BOS डेट्रॉइट से टोरंटो के लिए उड़ानें प्राप्त करें EOS\t	O O B-fromloc.city_name O O O O O atis_flight
+BOS टोरंटो से मिल्वौकी के लिए उड़ानें प्राप्त करें EOS\t	B-fromloc.city_name O O O O O O O atis_flight
+BOS बुधवार को ओकलैंड से साल्ट लेक सिटी के लिए अंतिम उड़ान प्राप्त करें या गुरुवार को ओकलैंड से साल्ट लेक सिटी के लिए पहली उड़ान प्राप्त करें EOS\t	B-depart_date.day_name O B-toloc.city_name O O O O O O O O O O O B-depart_date.day_name O B-toloc.city_name O O O O O O O O O O atis_flight
+BOS गुरुवार को ओकलैंड से साल्ट लेक सिटी के लिए पहली उड़ान प्राप्त करें EOS\t	B-depart_date.day_name O B-toloc.city_name O O O O O O O O O O atis_flight
+BOS बुधवार को ओकलैंड से साल्ट लेक सिटी के लिए अंतिम उड़ान प्राप्त करें EOS\t	B-depart_date.day_name O B-toloc.city_name O O O O O O O O O O atis_flight
+BOS ओकलैंड से साल्ट लेक सिटी के लिए अंतिम बुधवार की उड़ान की सूची EOS\t	B-toloc.city_name O O O O O O O B-depart_date.day_name O O O O atis_flight
+BOS टोरंटो से सैन डिएगो के लिए उड़ान प्राप्त करें और डीटीडब्ल्यू पर रुकें EOS\t	B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O O O O O atis_flight
+BOS सेंट के बीच उड़ानें प्राप्त करें।  EOS\t	O O O O O O atis_flight
+BOS मुझे मिल्वौकी से इंडियानापोलिस के लिए सोमवार सुबह 9 बजे से पहले छूटने वाली उड़ान चाहिए EOS\t	O O O B-toloc.city_name O O B-depart_date.day_name B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O O O atis_flight
+BOS मुझे मिल्वौकी से इंडियानापोलिस के लिए सोमवार सुबह 8 बजे से पहले प्रस्थान करने वाली एक उड़ान चाहिए EOS\t	O O O B-toloc.city_name O O B-depart_date.day_name B-depart_time.period_of_day B-depart_time.time I-depart_time.time O B-depart_time.time_relative O O O O O O atis_flight
+BOS क्या इंडियानापोलिस हवाई अड्डे पर जमीनी परिवहन उपलब्ध है? EOS\t	O B-toloc.city_name O O O O O O O atis_ground_service
+BOS मुझे इंडियानापोलिस से क्लीवलैंड के लिए मंगलवार को दोपहर में प्रस्थान करने वाली उड़ान के लिए उड़ान जानकारी चाहिए EOS\t	O B-toloc.city_name O B-toloc.city_name O O B-depart_date.day_name O B-depart_time.period_of_day O O O O O O O O O O atis_flight
+BOS मुझे बुधवार शाम 6 बजे के बाद क्लीवलैंड से मिल्वौकी के लिए प्रस्थान करने वाली उड़ान के लिए उड़ान जानकारी चाहिए EOS\t	O B-depart_date.day_name B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative B-toloc.city_name O O O O O O O O O O O O O atis_flight
+BOS मुझे बुधवार शाम 5 बजे के बाद क्लीवलैंड से वापस मिल्वौकी जाने वाली उड़ानों के लिए उड़ान जानकारी चाहिए EOS\t	O B-depart_date.day_name B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative B-toloc.city_name O O O O O O O O O O O atis_flight
+BOS मुझे बुधवार शाम 5 बजे के बाद क्लीवलैंड से मिल्वौकी के लिए प्रस्थान करने वाली उड़ानों के लिए उड़ान जानकारी चाहिए EOS\t	O B-depart_date.day_name B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative B-toloc.city_name O O O O O O O O O O O O O atis_flight
+BOS मुझे बुधवार शाम 5 बजे के बाद क्लीवलैंड से मिल्वौकी के लिए प्रस्थान करने वाली उड़ानों के लिए उड़ान जानकारी चाहिए EOS\t	O B-depart_date.day_name B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative B-toloc.city_name O O O O O O O O O O O O O atis_flight
+BOS मुझे सोमवार को डेनवर से साल्ट लेक सिटी के लिए उड़ान की आवश्यकता है EOS\t	O B-depart_date.day_name O B-toloc.city_name O O O O O O O O O O atis_flight
+BOS क्या डेनवर हवाई अड्डे पर जमीनी परिवहन उपलब्ध है? EOS\t	O B-toloc.city_name O O O O O O O atis_ground_service
+BOS मुझे सोमवार को शाम 5 बजे के बाद प्रस्थान करने वाली डेनवर से साल्ट लेक सिटी की उड़ान के लिए उड़ान और एयरलाइन जानकारी चाहिए EOS\t	O B-depart_date.day_name O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O O B-toloc.city_name O O O O O O O O O O I-airline_name O O atis_flight;atis_airline
+BOS क्या साल्ट लेक सिटी हवाई अड्डे पर जमीनी परिवहन उपलब्ध है? EOS\t	O O O O O O O O O O O atis_ground_service
+BOS मुझे सॉल्ट लेक सिटी से फ़ीनिक्स के लिए बुधवार शाम 5 बजे के बाद प्रस्थान करने वाली उड़ान चाहिए EOS\t	O O O O O O O O B-depart_date.day_name B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O O O O atis_flight
+BOS क्या फ़ीनिक्स हवाई अड्डे पर ज़मीनी परिवहन उपलब्ध है? EOS\t	O O O O O O O O O atis_ground_service
+BOS मुझे बुधवार को ओकलैंड से साल्ट लेक सिटी के लिए शाम 6 बजे के बाद प्रस्थान करने वाली उड़ान चाहिए EOS\t	O B-depart_date.day_name O B-toloc.city_name O O O O O O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O O O O atis_flight
+BOS मुझे गुरुवार को सुबह 9 बजे से पहले ओकलैंड से साल्ट लेक सिटी जाने वाली उड़ान और किराये की जानकारी चाहिए EOS\t	O B-depart_date.day_name O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative B-toloc.city_name O O O O O O O O B-transport_type O O O atis_flight;atis_airfare
+BOS मुझे गुरुवार को सुबह 8 बजे से पहले ओकलैंड से साल्ट लेक सिटी के लिए प्रस्थान करने वाली उड़ान और किराये की जानकारी चाहिए EOS\t	O B-depart_date.day_name O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O B-depart_time.time_relative B-toloc.city_name O O O O O O O O O O O B-transport_type O O O atis_flight;atis_airfare
+BOS मुझे गुरुवार को ओकलैंड से साल्ट लेक सिटी के लिए सुबह 8 बजे से पहले प्रस्थान करने वाली उड़ानों के लिए उड़ान संख्या और एयरलाइंस की आवश्यकता है EOS\t	O B-depart_date.day_name O B-toloc.city_name O O O O O O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O B-depart_time.time_relative O O O O O O O O O I-airline_name O O O atis_flight_no;atis_airline
+BOS मुझे गुरुवार को सुबह 8 बजे से पहले ओकलैंड से साल्ट लेक सिटी जाने वाली उड़ानों के लिए उड़ान संख्या चाहिए EOS\t	O B-depart_date.day_name O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O B-depart_time.time_relative B-toloc.city_name O O O O O O O O O O O O atis_flight_no
+BOS कृपया एरिज़ोना नेवादा और कैलिफ़ोर्निया में हवाई अड्डों की सूची बनाएं EOS\t	O B-toloc.state_name B-toloc.state_name O O O O O O O O atis_airport
+BOS कैलिफ़ोर्निया नेवादा एरिज़ोना हवाई अड्डों की सूची EOS\t	O B-toloc.state_name B-toloc.state_name O O O O atis_airport
+BOS एरिज़ोना हवाई अड्डे की सूची बनाएं EOS\t	B-toloc.state_name O O O O O atis_airport
+BOS कैलिफ़ोर्निया हवाई अड्डों की सूची EOS\t	O O O O O atis_airport
+BOS लास वेगास से फीनिक्स तक की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name I-toloc.city_name O O O O O O O O atis_flight
+BOS कैलिफ़ोर्निया हवाई अड्डों की सूची EOS\t	O O O O O atis_airport
+BOS हवाई अड्डों की सूची बनाएं EOS\t	O O O O O atis_airport
+BOS ओकलैंड से साल्ट लेक सिटी के लिए बुधवार रात की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O O O O O O B-depart_date.day_name B-depart_time.period_of_day O O O O O atis_flight
+BOS गुरुवार सुबह 6 बजे से पहले ओकलैंड से साल्ट लेक सिटी के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative B-toloc.city_name O O O O O O O O O O atis_flight
+BOS कौन सी एयरलाइंस टोरंटो और सैन डिएगो के बीच उड़ान भरती हैं EOS\t	O B-fare_basis_code I-airline_name B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O atis_airline
+BOS कृपया सेंट के बीच दोपहर की उड़ानें सूचीबद्ध करें।  EOS\t	O O O O B-depart_time.period_of_day O O O O atis_flight
+BOS टीपीए क्या है? EOS\t	B-airport_code O O atis_abbreviation
+BOS क्लीवलैंड से डलास तक कौन सी उड़ानें हैं? EOS\t	B-toloc.city_name O B-stoploc.city_name O O B-fare_basis_code O O atis_flight
+BOS कृपया केवल क्लीवलैंड से डलास के लिए दोपहर से पहले रवाना होने वाली उड़ानों की सूची बनाएं EOS\t	O O B-toloc.city_name O B-stoploc.city_name O O B-depart_time.period_of_day O B-depart_time.time_relative O O O O O O O atis_flight
+BOS दोपहर से पहले क्लीवलैंड से डलास के लिए किस प्रकार के विमान उड़ान भर रहे हैं EOS\t	B-depart_time.period_of_day O B-depart_time.time_relative B-toloc.city_name O B-stoploc.city_name O O O O O O O O O O atis_aircraft
+BOS मुझे इंडियानापोलिस से सिएटल तक की उड़ानों के बारे में जानकारी चाहिए EOS\t	O B-toloc.city_name O B-toloc.city_name O O O O O O O O atis_flight
+BOS मुझे मेम्फिस से सिएटल के लिए उड़ान चाहिए EOS\t	O B-fromloc.city_name O B-toloc.city_name O O O O atis_flight
+BOS मुझे नैशविले से सिएटल तक का टिकट चाहिए EOS\t	O O O B-toloc.city_name O O O O atis_airfare
+BOS मुझे नैशविले टेनेसी से सिएटल तक का टिकट चाहिए EOS\t	O O B-fromloc.state_name O B-toloc.city_name O O O O atis_airfare
+BOS मुझे मिल्वौकी से टाम्पा तक की उड़ान की जानकारी चाहिए EOS\t	O O O O O O O O O O atis_flight
+BOS मुझे टाम्पा में एक कार किराए पर लेनी है EOS\t	O O O O B-transport_type O O O O atis_ground_service
+BOS मुझे सेंट से दैनिक उड़ान चाहिए।  EOS\t	O O O B-flight_days O O atis_flight
+BOS मुझे ओकलैंड से प्रस्थान करने वाली और साल्ट लेक सिटी पहुंचने वाली उड़ानें चाहिए EOS\t	O B-toloc.city_name O O O O O O O O O O O O atis_flight
+BOS मुझे टोरंटो से सैन डिएगो तक की उड़ानों के बारे में जानकारी चाहिए EOS\t	O B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O O O O atis_flight
+BOS मुझे टोरंटो से सैन डिएगो तक की उड़ानों के बारे में जानकारी चाहिए EOS\t	O B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O O O O atis_flight
+BOS मुझे टोरंटो से सैन डिएगो के लिए उड़ान चाहिए EOS\t	O B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O atis_flight
+BOS मुझे सेंट के बीच उड़ानों के बारे में जानकारी चाहिए।  EOS\t	O O O O O O O O O O atis_flight
+BOS मुझे क्लीवलैंड से प्रस्थान करने वाली और डलास पहुंचने वाली उड़ानों की उड़ान संख्या चाहिए EOS\t	O B-toloc.city_name O O O O O B-stoploc.city_name O O O O O O O atis_flight_no
+BOS कौन सी उड़ानें न्यूयॉर्क से मियामी और वापस जाती हैं EOS\t	O B-fare_basis_code O O O B-fromloc.city_name O O O O atis_flight
+BOS किराया कोड qo का क्या मतलब है EOS\t	I-transport_type O B-fare_basis_code O O O O atis_abbreviation
+BOS मुझे मिल्वौकी से ऑरलैंडो तक की एकतरफ़ा उड़ान दिखाएँ EOS\t	O O O B-fromloc.city_name O O O O O atis_flight
+BOS हमारा संक्षिप्त नाम क्या है EOS\t	O O O O O atis_abbreviation
+BOS मुझे मिल्वौकी से ऑरलैंडो के लिए बुधवार शाम या गुरुवार सुबह एक तरफ़ा टिकट चाहिए EOS\t	O O O B-fromloc.city_name O O B-depart_date.day_name B-depart_time.period_of_day O B-depart_date.day_name B-depart_time.period_of_day O O O O atis_airfare
+BOS मुझे मिल्वौकी से ऑरलैंडो तक की उड़ानें दिखाओ EOS\t	O O O B-fromloc.city_name O O O O atis_flight
+BOS किराया कोड एफ का क्या मतलब है EOS\t	I-transport_type O B-fare_basis_code O O O O atis_abbreviation
+BOS किराया कोड एच का क्या मतलब है? EOS\t	I-transport_type O B-fare_basis_code O O O O atis_abbreviation
+BOS किराया कोड y का क्या मतलब है EOS\t	I-transport_type O O O O O O atis_abbreviation
+BOS एपी 57 प्रतिबंध क्या हैं? EOS\t	B-restriction_code I-restriction_code O O O atis_abbreviation
+BOS कृपया मुझे इंडियानापोलिस से मेम्फिस के लिए सुबह 10 बजे से पहले निकलने वाली एकतरफ़ा प्रथम श्रेणी की उड़ानें दिखाएँ EOS\t	O O B-toloc.city_name O B-fromloc.city_name O O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O O O O O O O atis_flight
+BOS अब मुझे बरबैंक से सिएटल तक की सभी राउंड ट्रिप उड़ानें दिखाएं जो सिएटल में शाम 7 बजे से पहले पहुंचती हैं EOS\t	O O B-fromloc.city_name O B-toloc.city_name O O O O O O O O B-toloc.city_name O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O B-depart_time.time_relative O O atis_flight
+BOS कृपया ऑरलैंडो से मॉन्ट्रियल के लिए राउंड ट्रिप उड़ानें EOS\t	O B-fromloc.city_name O B-fromloc.city_name O O O O O atis_flight
+BOS डीएल कौन सी एयरलाइन है? EOS\t	O O B-fare_basis_code I-airline_name O atis_airline
+BOS मुझे मॉन्ट्रियल से ऑरलैंडो तक डेल्टा एयरलाइंस की सभी उड़ानें दिखाओ EOS\t	O B-fromloc.city_name O B-fromloc.city_name O B-airline_name I-airline_name O O O O atis_flight
+BOS कृपया मुझे ऑरलैंडो से मॉन्ट्रियल तक की सभी उड़ानें दिखाएँ EOS\t	O O B-fromloc.city_name O B-fromloc.city_name O O O O O atis_flight
+BOS कौन सी एयरलाइन किलोवाट है EOS\t	O B-fare_basis_code I-airline_name B-airline_code O atis_airline
+BOS कृपया न्यूयॉर्क से मियामी के लिए किसी भी श्रेणी की सभी उड़ानें सूचीबद्ध करें EOS\t	O O O B-fromloc.city_name O O O O O O O O O O atis_flight
+BOS किराया कोड बीएच का क्या मतलब है EOS\t	I-transport_type O O O O O O atis_abbreviation
+BOS कृपया मुझे मियामी से जेएफके के लिए वापसी की उड़ान दिखाएँ EOS\t	O O B-fromloc.city_name O O O O O O O O atis_flight
+BOS किराया कोड बीएच का क्या मतलब है EOS\t	I-transport_type O O O O O O atis_abbreviation
+BOS किराया कोड बीएच का क्या मतलब है EOS\t	I-transport_type O O O O O O atis_abbreviation
+BOS किराया कोड बीएच का क्या मतलब है EOS\t	I-transport_type O O O O O O atis_abbreviation
+BOS किराया कोड बीएच का क्या मतलब है EOS\t	I-transport_type O O O O O O atis_abbreviation
+BOS मुझे बुधवार शाम 6 बजे के बाद मिल्वौकी से ऑरलैंडो के लिए एकतरफ़ा उड़ान दिखाएँ EOS\t	O B-depart_date.day_name B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O B-fromloc.city_name O O O O O atis_flight
+BOS मुझे इंडियानापोलिस से मेम्फिस तक की उड़ानें दिखाओ EOS\t	O B-toloc.city_name O B-fromloc.city_name O O O O atis_flight
+BOS मुझे बरबैंक से सिएटल तक की राउंड ट्रिप उड़ानें दिखाओ EOS\t	O B-fromloc.city_name O B-toloc.city_name O O O O O O atis_flight
+BOS मुझे ऑरलैंडो से मॉन्ट्रियल तक की राउंड ट्रिप उड़ानें दिखाओ EOS\t	O B-fromloc.city_name O B-fromloc.city_name O O O O O O atis_flight
+BOS मुझे मॉन्ट्रियल से ऑरलैंडो तक नॉनस्टॉप उड़ानें दिखाओ EOS\t	O B-fromloc.city_name O B-fromloc.city_name O O O O atis_flight
+BOS मुझे मॉन्ट्रियल और ऑरलैंडो के बीच की यात्राएँ दिखाओ EOS\t	O B-fromloc.city_name O B-fromloc.city_name O O O O O atis_flight
+BOS मुझे मॉन्ट्रियल से ऑरलैंडो तक की राउंड ट्रिप उड़ानें दिखाओ EOS\t	O B-fromloc.city_name O B-fromloc.city_name O O O O O O atis_flight
+BOS मुझे मॉन्ट्रियल से ऑरलैंडो के लिए सबसे सस्ती एकतरफ़ा उड़ानें दिखाएँ EOS\t	O B-fromloc.city_name O B-fromloc.city_name O O O O O O O atis_flight
+BOS मुझे ऑरलैंडो से मॉन्ट्रियल के लिए सबसे सस्ती एकतरफ़ा उड़ानें दिखाएँ EOS\t	O B-fromloc.city_name O B-fromloc.city_name O O O O O O O atis_flight
+BOS मुझे मियामी से न्यूयॉर्क के लिए सबसे सस्ती किफायती उड़ानें दिखाएँ EOS\t	O B-fromloc.city_name O O O O O O O O O atis_flight
+BOS कैनसस शहर से लास वेगास की अर्थव्यवस्था तक EOS\t	O O O B-toloc.city_name I-toloc.city_name O B-economy O atis_flight
+BOS कैनसस शहर से लास वेगास की अर्थव्यवस्था तक EOS\t	O O O B-toloc.city_name I-toloc.city_name O B-economy O atis_flight
+BOS एचपी कौन सी एयरलाइन है? EOS\t	O O B-fare_basis_code I-airline_name O atis_airline
+BOS लास वेगास में जमीनी परिवहन EOS\t	B-toloc.city_name I-toloc.city_name O O O atis_ground_service
+BOS लास वेगास के लिए जमीनी परिवहन EOS\t	B-toloc.city_name I-toloc.city_name O O O O atis_ground_service
+BOS लास वेगास से बाल्टीमोर अर्थव्यवस्था तक EOS\t	B-toloc.city_name I-toloc.city_name O B-fromloc.city_name B-economy O atis_flight
+BOS लास वेगास से बाल्टीमोर अर्थव्यवस्था तक EOS\t	B-toloc.city_name I-toloc.city_name O B-fromloc.city_name B-economy O atis_flight
+BOS बाल्टीमोर से कैनसस शहर की अर्थव्यवस्था EOS\t	B-fromloc.city_name O O O O B-economy atis_flight
+BOS हमारी कौन सी एयरलाइन है EOS\t	O O B-fare_basis_code I-airline_name O atis_airline
+BOS हमारी कौन सी एयरलाइन है EOS\t	O O B-fare_basis_code I-airline_name O atis_airline
+BOS हमारी कौन सी एयरलाइन है EOS\t	O O B-fare_basis_code I-airline_name O atis_airline
+BOS हमारी कौन सी एयरलाइन है EOS\t	O O B-fare_basis_code I-airline_name O atis_airline
+BOS हमारी कौन सी एयरलाइन है EOS\t	O O B-fare_basis_code I-airline_name O atis_airline
+BOS कोलंबस से शिकागो एक तरफ सुबह 10 बजे से पहले EOS\t	O O B-toloc.city_name O O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative atis_flight
+BOS एचपी कौन सी एयरलाइन है? EOS\t	O O B-fare_basis_code I-airline_name O atis_airline
+BOS अनुसूचित जनजाति।  EOS\t	O O atis_flight
+BOS बुधवार शाम 5 बजे के बाद मिल्वौकी से ऑरलैंडो तक एक तरफ EOS\t	B-depart_date.day_name B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O B-fromloc.city_name O O O atis_flight
+BOS और मिल्वौकी से अटलांटा तक प्रतिदिन सुबह 10 बजे से पहले EOS\t	O O O B-toloc.city_name O O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative atis_flight
+BOS YX कौन सी एयरलाइन है? EOS\t	O O B-fare_basis_code I-airline_name O atis_airline
+BOS मुझे सैन जोस से फ़ीनिक्स तक की सभी उड़ानें दिखाएँ EOS\t	O B-toloc.city_name I-toloc.city_name O O O O O O O atis_flight
+BOS मुझे सैन जोस से फ़ीनिक्स तक की सभी उड़ानें दिखाएँ EOS\t	O B-toloc.city_name I-toloc.city_name O O O O O O O atis_flight
+BOS एचपी कौन सी एयरलाइन है? EOS\t	O O B-fare_basis_code I-airline_name O atis_airline
+BOS मुझे फ़ीनिक्स में जमीनी परिवहन दिखाओ EOS\t	O O O O O O atis_ground_service
+BOS मुझे फ़ीनिक्स से फ़ोर्ट वर्थ तक की उड़ानें दिखाओ EOS\t	O O O O O O O O O atis_flight
+BOS मुझे फोर्ट वर्थ में जमीनी परिवहन दिखाओ EOS\t	O O O O O O O atis_ground_service
+BOS मुझे फोर्ट वर्थ से सैन जोस तक की उड़ानें दिखाओ EOS\t	O O O O B-toloc.city_name I-toloc.city_name O O O O atis_flight
+BOS मुझे न्यूयॉर्क से मियामी राउंड ट्रिप की प्रथम श्रेणी की उड़ानें दिखाओ EOS\t	O O O B-fromloc.city_name O O O O O O O O atis_flight
+BOS मुझे न्यूयॉर्क से मियामी राउंड ट्रिप की प्रथम श्रेणी की उड़ानें दिखाओ EOS\t	O O O B-fromloc.city_name O O O O O O O O atis_flight
+BOS मुझे न्यूयॉर्क से मियामी तक की सभी दौर की उड़ानें बिना रुके दिखाओ EOS\t	O O O B-fromloc.city_name O O O O O O O O O atis_flight
+BOS मुझे मियामी से न्यूयॉर्क तक की सभी दौर की यात्रा वाली उड़ानें बिना रुके दिखाओ EOS\t	O B-fromloc.city_name O O O O O O O I-round_trip O O O O O atis_flight
+BOS मुझे किसी भी दिन सुबह 10 बजे से पहले इंडियानापोलिस से मेम्फिस के लिए एकतरफ़ा उड़ान दिखाएँ EOS\t	O O O O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative B-toloc.city_name O B-fromloc.city_name O O O O O atis_flight
+BOS किराया कोड एफ का क्या मतलब है EOS\t	I-transport_type O B-fare_basis_code O O O O atis_abbreviation
+BOS मुझे बरबैंक से टैकोमा तक की राउंड ट्रिप उड़ानें दिखाओ EOS\t	O B-fromloc.city_name O O O O O O O O atis_flight
+BOS प्रतिबंध AP58 का क्या मतलब है EOS\t	O O O O O O atis_abbreviation
+BOS किराया कोड एच का क्या मतलब है? EOS\t	I-transport_type O B-fare_basis_code O O O O atis_abbreviation
+BOS एयरलाइन कैसी है EOS\t	I-airline_name O O atis_airline
+BOS एयरलाइन कैसी है EOS\t	I-airline_name O O atis_airline
+BOS एयरलाइन कैसी है EOS\t	I-airline_name O O atis_airline
+BOS सैम के समान कौन सी एयरलाइन है? EOS\t	O O O O B-fare_basis_code I-airline_name O atis_airline
+BOS मुझे सेंट से नॉनस्टॉप उड़ानें दिखाओ।  EOS\t	O O O O O O atis_flight
+BOS मुझे टोरंटो से सेंट तक नॉनस्टॉप उड़ानें दिखाओ।  EOS\t	O B-fromloc.city_name O O O O O O atis_flight
+BOS मुझे टोरंटो से सेंट तक नॉनस्टॉप उड़ानें और किराया दिखाओ।  EOS\t	O B-fromloc.city_name O O O O O O I-transport_type O atis_flight;atis_airfare
+BOS मुझे टोरंटो से सेंट तक नॉनस्टॉप उड़ानें दिखाओ।  EOS\t	O B-fromloc.city_name O O O O O O atis_flight
+BOS मुझे मिल्वौकी से ऑरलैंडो के लिए एकतरफ़ा कार्यदिवस की उड़ानें दिखाएँ EOS\t	O O O B-fromloc.city_name O O O O O O O atis_flight
+BOS मुझे मिल्वौकी से ऑरलैंडो के लिए एकतरफ़ा कार्यदिवस की उड़ानें दिखाएँ EOS\t	O O O B-fromloc.city_name O O O O O O O atis_flight
+BOS एचपी कौन सी एयरलाइन है? EOS\t	O O B-fare_basis_code I-airline_name O atis_airline
+BOS शिकागो से सैन डिएगो के लिए उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS शिकागो से सैन डिएगो के लिए उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS कैनसस सिटी से डेनवर तक की उड़ानों की सूची बनाएं EOS\t	O O O B-toloc.city_name O O O O O O atis_flight
+BOS डेनवर से फीनिक्स तक की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O O O O O O O O atis_flight
+BOS फ़ीनिक्स से लास वेगास तक की उड़ानों की सूची बनाएं EOS\t	O O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS लास वेगास से सैन डिएगो तक की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name I-toloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS सुबह शिकागो से कैनसस सिटी के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_time.period_of_day B-toloc.city_name O O O O O O O O O atis_flight
+BOS ह्यूस्टन से सैन जोस तक की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS ह्यूस्टन से मिल्वौकी तक की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O O O O O O O O atis_flight
+BOS बुधवार को मिल्वौकी से सैन जोस के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name O O O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS शुक्रवार को सैन जोस से डलास के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name O B-toloc.city_name I-toloc.city_name O B-stoploc.city_name O O O O O O atis_flight
+BOS डलास से ह्यूस्टन तक की उड़ानों की सूची बनाएं EOS\t	B-stoploc.city_name O B-toloc.city_name O O O O O O atis_flight
+BOS न्यूयॉर्क में हवाई अड्डों से शहर तक की दूरी की सूची बनाएं EOS\t	O O O O O O O O O O O O atis_distance
+BOS न्यूयॉर्क में हवाई अड्डों की सूची बनाएं EOS\t	O O O O O O O atis_airport
+BOS न्यूयॉर्क में हवाई अड्डों की सूची बनाएं EOS\t	O O O O O O O atis_airport
+BOS ला में हवाई अड्डों की सूची EOS\t	B-fromloc.airport_name O O O O O atis_airport
+BOS हवाई अड्डों की सूची बनाएं EOS\t	O O O O O atis_airport
+BOS ला में हवाई अड्डों की सूची EOS\t	B-fromloc.airport_name O O O O O atis_airport
+BOS ला में हवाई अड्डों की सूची EOS\t	B-fromloc.airport_name O O O O O atis_airport
+BOS ला में हवाई अड्डों की सूची बनाएं EOS\t	B-fromloc.airport_name O O O O O O atis_airport
+BOS सूची ला EOS\t	O B-fromloc.airport_name atis_city
+BOS सूची ला EOS\t	O B-fromloc.airport_name atis_city
+BOS न्यूयॉर्क से ला तक की उड़ानों की सूची बनाएं EOS\t	O O B-fromloc.airport_name O O O O O O atis_flight
+BOS ला गार्डिया से बरबैंक तक की उड़ानों की सूची बनाएं EOS\t	B-fromloc.airport_name I-fromloc.airport_name O B-fromloc.city_name O O O O O O atis_flight
+BOS ला से ऑरलैंडो तक की उड़ानों की सूची बनाएं EOS\t	B-fromloc.airport_name O B-fromloc.city_name O O O O O O atis_flight
+BOS ओंटारियो कैलिफ़ोर्निया से ऑरलैंडो तक की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O O B-fromloc.city_name O O O O O O atis_flight
+BOS ओंटारियो कैलिफ़ोर्निया से ऑरलैंडो तक की उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O O B-fromloc.city_name O O O O O O atis_flight
+BOS सोमवार को किराए के साथ इंडियानापोलिस से मेम्फिस तक की उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name O O O O B-toloc.city_name O B-fromloc.city_name O O O O O O atis_flight
+BOS सोमवार को इंडियानापोलिस से मेम्फिस के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name O B-toloc.city_name O B-fromloc.city_name O O O O O O atis_flight
+BOS बुधवार को मेम्फिस से मियामी के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name O B-fromloc.city_name O B-fromloc.city_name O O O O O O atis_flight
+BOS रविवार को मियामी से इंडियानापोलिस के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name O B-fromloc.city_name O B-toloc.city_name O O O O O O atis_flight
+BOS शनिवार दोपहर को चार्लोट से उड़ानों की सूची बनाएं EOS\t	B-arrive_date.day_name B-depart_time.period_of_day O O O O O O O atis_flight
+BOS चार्लोट से सभी उड़ानों के लिए विमान के प्रकार की सूची बनाएं EOS\t	O O O O O O O O O O O O atis_aircraft
+BOS टैकोमा से ऑरलैंडो तक की उड़ानों और किरायों की सूची बनाएं, शनिवार को प्रस्थान करने वाली राउंड ट्रिप और अगले शनिवार को वापसी EOS\t	O O B-fromloc.city_name O O O O O O O O B-arrive_date.day_name O O O O O O O I-return_date.date_relative B-arrive_date.day_name O O atis_flight;atis_airfare
+BOS किराया कोड q किस श्रेणी का है? EOS\t	I-transport_type O O O O O O atis_abbreviation
+BOS क्यू के किराया आधार कोड के आधार पर शनिवार को ऑरलैंडो से टैकोमा तक की उड़ानों की सूची बनाएं EOS\t	B-fare_basis_code O I-transport_type O O O O O B-arrive_date.day_name O B-fromloc.city_name O O O O O O O O atis_flight
+BOS डेट्रॉइट से सेंट तक प्रथम श्रेणी की राउंड ट्रिप के लिए हवाई किराए की सूची बनाएं।  EOS\t	O O O O O O O O O O O O O O O O atis_airfare
+BOS डेट्रॉइट से सेंट तक कोच राउंड ट्रिप हवाई किराया की सूची।  EOS\t	O O O O O O O O I-transport_type O O atis_airfare
+BOS सोमवार सुबह पिट्सबर्ग से न्यूआर्क के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name B-depart_time.period_of_day B-fromloc.city_name O O O O O O O O atis_flight
+BOS शुक्रवार को मिनियापोलिस से पिट्सबर्ग के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name O O O B-fromloc.city_name O O O O O O atis_flight
+BOS सिनसिनाटी से टाम्पा के लिए सुबह 9 बजे से पहले की उड़ानों की सूची बनाएं EOS\t	B-fromloc.city_name O O O O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O O O O atis_flight
+BOS दोपहर से पहले सिनसिनाटी से टाम्पा के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_time.period_of_day O B-depart_time.time_relative B-fromloc.city_name O O O O O O O O atis_flight
+BOS दोपहर 3 बजे के बाद टाम्पा से सिनसिनाटी के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_time.period_of_day B-depart_time.time I-depart_time.time O B-depart_time.time_relative O O B-fromloc.city_name O O O O O O atis_flight
+BOS सिएटल से साल्ट लेक सिटी तक उड़ान भरने वाली एयरलाइनों की सूची बनाएं EOS\t	B-toloc.city_name O O O O O O O O O O O O atis_airline
+BOS सिएटल से साल्ट लेक सिटी तक डेल्टा उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O O O O O B-airline_name O O O O atis_flight
+BOS सिएटल से साल्ट लेक सिटी तक डेल्टा उड़ानों की बैठने की क्षमता की सूची बनाएं EOS\t	B-toloc.city_name O O O O O B-airline_name O O O O O O O O atis_capacity
+BOS विमान के प्रकार के साथ सिएटल से साल्ट लेक सिटी तक डेल्टा उड़ानों की सूची बनाएं EOS\t	O O O O O B-toloc.city_name O O O O O B-airline_name O O O O atis_flight
+BOS बाल्टीमोर में जमीनी परिवहन क्या है? EOS\t	B-fromloc.city_name O O O O O atis_ground_service
+BOS बाल्टीमोर में जमीनी परिवहन की सूची बनाएं EOS\t	B-fromloc.city_name O O O O O O atis_ground_service
+BOS शुक्रवार को बाल्टीमोर से सैन फ्रांसिस्को के लिए उड़ानों की सूची बनाएं EOS\t	B-depart_date.day_name O B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS मुझे मंगलवार को लॉस एंजिल्स से पिट्सबर्ग के लिए उड़ानें दें EOS\t	O B-depart_date.day_name O B-toloc.city_name I-toloc.city_name O B-fromloc.city_name O O O O atis_flight
+BOS मुझे गुरुवार शाम को पिट्सबर्ग से लॉस एंजिल्स के लिए उड़ान दें EOS\t	O B-depart_date.day_name B-depart_time.period_of_day O B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O atis_flight
+BOS मुझे अगले बुधवार को क्लीवलैंड से मियामी तक की राउंड ट्रिप उड़ानें दीजिए EOS\t	O I-return_date.date_relative B-depart_date.day_name O B-toloc.city_name O B-fromloc.city_name O O O O O O atis_flight
+BOS मुझे अगले बुधवार को क्लीवलैंड से मियामी तक आने-जाने वाली उड़ानों का किराया बताएं EOS\t	O I-return_date.date_relative B-depart_date.day_name O B-toloc.city_name O B-fromloc.city_name O O O O O I-transport_type O atis_airfare
+BOS मुझे बुधवार को मियामी से क्लीवलैंड की यात्रा के लिए उड़ानें और किराया बताएं EOS\t	O B-depart_date.day_name O B-fromloc.city_name O B-toloc.city_name O I-round_trip O O O O I-transport_type O atis_flight
+BOS मुझे अगले रविवार को मियामी से क्लीवलैंड तक का किराया दीजिए EOS\t	O I-return_date.date_relative B-depart_date.day_name O B-fromloc.city_name O B-toloc.city_name O O I-transport_type O atis_airfare
+BOS मुझे अमेरिकन एयरलाइंस पर शनिवार या रविवार को मिल्वौकी से फीनिक्स के लिए उड़ानें दें EOS\t	O B-airline_name I-airline_name O B-arrive_date.day_name O B-depart_date.day_name O O O O O O O O atis_flight
+BOS मुझे बुधवार शाम को फ़ीनिक्स से मिल्वौकी के लिए उड़ानें दें EOS\t	O B-depart_date.day_name B-depart_time.period_of_day O O O O O O O O atis_flight
+BOS मुझे बुधवार को अमेरिकन एयरलाइंस पर फीनिक्स से मिल्वौकी के लिए उड़ानें दें EOS\t	O B-depart_date.day_name O B-airline_name I-airline_name O O O O O O O O atis_flight
+BOS मुझे अमेरिकन एयरलाइंस पर फ़ीनिक्स से मिल्वौकी तक की उड़ानें प्रदान करें EOS\t	O B-airline_name I-airline_name O O O O O O O O O atis_flight
+BOS मुझे फ़ीनिक्स से मिल्वौकी तक की उड़ानें दीजिए EOS\t	O O O O O O O O atis_flight
+BOS मुझे भोजन दीजिए, शनिवार की सुबह शिकागो से सिएटल के लिए बिना रुके प्रस्थान करने वाली उड़ानें EOS\t	O B-meal O B-arrive_date.day_name O B-depart_time.period_of_day B-toloc.city_name O B-toloc.city_name O O O O O O O O atis_flight
+BOS मुझे शनिवार सुबह शिकागो से सिएटल की उड़ान बताइए जिसमें भोजन होगा EOS\t	O B-arrive_date.day_name B-depart_time.period_of_day B-toloc.city_name O B-toloc.city_name O O O O B-meal O atis_flight
+BOS मुझे सिएटल से शिकागो के लिए उड़ानें दीजिए जिनमें कॉन्टिनेंटल पर भोजन मिलेगा EOS\t	O B-toloc.city_name O B-toloc.city_name O O O O O O O B-meal O atis_flight
+BOS मुझे सिएटल से शिकागो के लिए उड़ानें बताएं जिनमें महाद्वीपीय शनिवार की सुबह का भोजन होगा EOS\t	O B-toloc.city_name O B-toloc.city_name O O O O O O B-arrive_date.day_name O B-depart_time.period_of_day O B-meal O atis_flight
+BOS मुझे कॉन्टिनेंटल पर शिकागो से सिएटल तक की उड़ानें दीजिए जिनमें शनिवार की सुबह जल्दी भोजन मिलेगा EOS\t	O O O B-toloc.city_name O B-toloc.city_name O O O O O B-arrive_date.day_name O B-depart_time.period_of_day B-depart_time.period_of_day B-meal O atis_flight
+BOS मुझे शिकागो से सिएटल तक की महाद्वीपीय उड़ानों का एक संयोजन दीजिए जिसमें शनिवार सुबह जल्दी भोजन मिलता है EOS\t	O B-toloc.city_name O B-toloc.city_name O O O O O O O O O B-arrive_date.day_name B-depart_time.period_of_day B-depart_time.period_of_day B-meal O O atis_flight
+BOS मुझे शिकागो से मिनियापोलिस के लिए भोजन के साथ शनिवार की सुबह की उड़ान दीजिए EOS\t	O B-toloc.city_name O O O O B-meal O O B-arrive_date.day_name O B-depart_time.period_of_day O O O atis_flight
+BOS मुझे कॉन्टिनेंटल पर शनिवार की सुबह की उड़ानें बताएं जिनमें शिकागो से मिनियापोलिस तक का भोजन होगा EOS\t	O O O B-arrive_date.day_name O B-depart_time.period_of_day O O O O B-toloc.city_name O O O O B-meal O atis_flight
+BOS मुझे शनिवार की सुबह शिकागो से सेंट तक की उड़ानें बताएं।  EOS\t	O B-arrive_date.day_name O B-depart_time.period_of_day B-toloc.city_name O O O O O O atis_flight
+BOS मुझे न्यूयॉर्क से लास वेगास के लिए बिना रुके उड़ानें प्रदान करें EOS\t	O O O B-toloc.city_name I-toloc.city_name O O O O O O O atis_flight
+BOS मुझे मेम्फिस से लास वेगास तक बिना रुके उड़ानें प्रदान करें EOS\t	O B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS मुझे पच्चीस दिसंबर के आसपास इंडियानापोलिस से ऑरलैंडो के लिए सबसे सस्ती राउंड ट्रिप उड़ानें बताएं EOS\t	O O B-depart_date.month_name O O B-toloc.city_name O B-fromloc.city_name O O O O O O O O atis_flight
+BOS मुझे नेवार्क से टाम्पा के लिए शुक्रवार की उड़ान चाहिए EOS\t	O B-toloc.city_name O O O O B-depart_date.day_name O O O atis_flight
+BOS मुझे टाम्पा से चार्लोट के लिए रविवार की उड़ान चाहिए EOS\t	O O O O O O B-depart_date.day_name O O O atis_flight
+BOS मुझे मंगलवार की सुबह चार्लोट से बाल्टीमोर के लिए उड़ान दीजिए EOS\t	O B-depart_date.day_name O B-depart_time.period_of_day O O B-fromloc.city_name O O O O atis_flight
+BOS क्या मुझे बाल्टीमोर से नेवार्क के लिए सुबह की उड़ान मिल सकती है? EOS\t	O O B-fromloc.city_name O B-toloc.city_name O O B-depart_time.period_of_day O O O O O atis_flight
+BOS पच्चीस दिसंबर को इंडियानापोलिस से ऑरलैंडो तक आने-जाने का सबसे सस्ता किराया EOS\t	O B-depart_date.month_name O B-toloc.city_name O B-fromloc.city_name O O O O O I-transport_type atis_airfare
+BOS इक्कीस दिसंबर को इंडियानापोलिस से ऑरलैंडो तक एक तरफ का सबसे सस्ता किराया EOS\t	O B-depart_date.month_name O B-toloc.city_name O B-fromloc.city_name O O O O O O I-transport_type atis_airfare
+BOS डलास से ह्यूस्टन तक उड़ान संख्या EOS\t	B-stoploc.city_name O B-toloc.city_name O O O atis_flight_no
+BOS ह्यूस्टन से डलास तक उड़ान संख्या EOS\t	B-toloc.city_name O B-stoploc.city_name O O O atis_flight_no
+BOS मिल्वौकी से फीनिक्स के लिए अमेरिकी एयरलाइंस की शनिवार की उड़ान EOS\t	O O O O O B-airline_name I-airline_name O B-arrive_date.day_name O O atis_flight
+BOS फीनिक्स से मिल्वौकी तक अमेरिकी एयरलाइंस पर उड़ान संख्या EOS\t	O O O O B-airline_name I-airline_name O O O atis_flight_no
+BOS शिकागो से सिएटल तक उड़ान संख्या EOS\t	B-toloc.city_name O B-toloc.city_name O O O atis_flight_no
+BOS महाद्वीपीय पर शिकागो से सिएटल तक उड़ान संख्या EOS\t	O O B-toloc.city_name O B-toloc.city_name O O O atis_flight_no
+BOS महाद्वीपीय पर सिएटल से शिकागो तक उड़ान संख्या EOS\t	O O B-toloc.city_name O B-toloc.city_name O O O atis_flight_no
+BOS क्या पिट्सबर्ग से क्लीवलैंड का किराया 200 डॉलर से कम है? EOS\t	O B-fromloc.city_name O B-toloc.city_name O I-transport_type B-fare_amount I-fare_amount O B-cost_relative O atis_airfare
+BOS पिट्सबर्ग से अटलांटा तक कोच उड़ान का किराया कितना है? EOS\t	B-fromloc.city_name O B-toloc.city_name O O O O I-transport_type O O atis_airfare
+BOS शुक्रवार को नेवार्क से टाम्पा तक EOS\t	B-depart_date.day_name O B-toloc.city_name O O O atis_flight
+BOS टाम्पा से चार्लोट रविवार सुबह EOS\t	O O O B-depart_date.day_name B-depart_time.period_of_day atis_flight
+BOS चार्लोट मंगलवार को बाल्टीमोर के लिए EOS\t	O B-depart_date.day_name O B-fromloc.city_name O O atis_flight
+BOS बुधवार सुबह बाल्टीमोर से नेवार्क तक EOS\t	B-depart_date.day_name B-depart_time.period_of_day B-fromloc.city_name O B-toloc.city_name O atis_flight
+BOS 1201 बजे के बाद डलास से ह्यूस्टन EOS\t	B-depart_time.time I-depart_time.time O B-depart_time.time_relative B-stoploc.city_name O B-toloc.city_name atis_flight
+BOS आधी रात से पहले ह्यूस्टन से डलास तक EOS\t	O B-depart_time.period_of_day O B-depart_time.time_relative B-toloc.city_name O B-stoploc.city_name O atis_flight
+BOS इंडियानापोलिस से ऑरलैंडो, सत्ताईस दिसंबर EOS\t	B-toloc.city_name O O O B-depart_date.month_name atis_flight
+BOS सत्ताईस दिसंबर को इंडियानापोलिस से ऑरलैंडो का सबसे सस्ता किराया EOS\t	O B-depart_date.month_name O B-toloc.city_name O B-fromloc.city_name O O O I-transport_type atis_airfare
+BOS इक्कीसवीं दिसंबर को इंडियानापोलिस से ऑरलैंडो तक की राउंड ट्रिप का किराया सबसे सस्ता है EOS\t	O B-depart_date.month_name O B-toloc.city_name O B-fromloc.city_name O O O O O I-transport_type O O O atis_airfare
+BOS क्लीवलैंड से मियामी बुधवार को शाम 4 बजे से पहले पहुंच जाएगी EOS\t	B-toloc.city_name O B-fromloc.city_name B-depart_date.day_name O B-depart_time.period_of_day B-arrive_time.start_time I-depart_time.time O B-depart_time.time_relative O O atis_flight
+BOS मियामी से क्लीवलैंड रविवार दोपहर EOS\t	B-fromloc.city_name O B-toloc.city_name B-depart_date.day_name B-depart_time.period_of_day atis_flight
+BOS रविवार को न्यूयॉर्क शहर से लास वेगास और मेम्फिस से लास वेगास EOS\t	B-depart_date.day_name O O O O B-toloc.city_name I-toloc.city_name O B-fromloc.city_name O B-toloc.city_name I-toloc.city_name atis_flight
+BOS रविवार को न्यूयॉर्क शहर से लास वेगास और मेम्फिस से लास वेगास EOS\t	B-depart_date.day_name O O O O B-toloc.city_name I-toloc.city_name O B-fromloc.city_name O B-toloc.city_name I-toloc.city_name atis_flight
+BOS न्यूयॉर्क से लास वेगास रविवार दोपहर EOS\t	O O B-toloc.city_name I-toloc.city_name B-depart_date.day_name B-depart_time.period_of_day atis_flight
+BOS मेम्फिस से लास वेगास रविवार दोपहर EOS\t	B-fromloc.city_name O B-toloc.city_name I-toloc.city_name B-depart_date.day_name B-depart_time.period_of_day atis_flight
+BOS रविवार दोपहर को न्यूयॉर्क से लास वेगास EOS\t	B-depart_date.day_name B-depart_time.period_of_day O O O B-toloc.city_name I-toloc.city_name atis_flight
+BOS शनिवार की सुबह शिकागो से सिएटल EOS\t	B-arrive_date.day_name O B-depart_time.period_of_day B-toloc.city_name O B-toloc.city_name atis_flight
+BOS शिकागो से लास वेगास शनिवार की सुबह EOS\t	B-toloc.city_name O B-toloc.city_name I-toloc.city_name B-arrive_date.day_name O B-depart_time.period_of_day atis_flight
+BOS मंगलवार दोपहर लॉस एंजिल्स से पिट्सबर्ग तक EOS\t	B-depart_date.day_name B-depart_time.period_of_day B-toloc.city_name I-toloc.city_name O B-fromloc.city_name O atis_flight
+BOS सोमवार की दोपहर लॉस एंजिल्स से पिट्सबर्ग तक EOS\t	B-depart_date.day_name O B-depart_time.period_of_day B-toloc.city_name I-toloc.city_name O B-fromloc.city_name O atis_flight
+BOS गुरुवार शाम को पिट्सबर्ग से लॉस एंजिल्स EOS\t	B-depart_date.day_name B-depart_time.period_of_day O B-fromloc.city_name O B-toloc.city_name I-toloc.city_name atis_flight
+BOS शनिवार को मिल्वौकी से फीनिक्स तक EOS\t	B-arrive_date.day_name O O O O O atis_flight
+BOS फ़ीनिक्स रविवार को मिल्वौकी के लिए EOS\t	O B-depart_date.day_name O O O O atis_flight
+BOS फ़ीनिक्स बुधवार को मिल्वौकी के लिए EOS\t	O B-depart_date.day_name O O O O atis_flight
+BOS बाल्टीमोर से सैन फ्रांसिस्को के लिए एक उड़ान शाम 5 से 8 बजे के बीच आ रही है EOS\t	B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O B-depart_time.period_of_day B-arrive_time.time O B-depart_time.time I-depart_time.time O O B-airline_code O O atis_flight
+BOS कितनी उत्तर पश्चिमी उड़ानें सेंट से रवाना होती हैं?  EOS\t	O B-fromloc.state_name O O O O O O O atis_flight
+BOS कितनी उत्तर पश्चिमी उड़ानें वाशिंगटन डी.सी. से रवाना होती हैं EOS\t	O B-fromloc.state_name O O B-toloc.city_name O O O O O atis_flight
+BOS उत्तरपश्चिम से डुलल्स छोड़ने वाली कितनी उड़ानें हैं EOS\t	O O O O O O O O atis_flight
+BOS उत्तरपश्चिम किन शहरों से उड़ान भरता है EOS\t	O O O O O O O atis_city
+BOS उन शहरों की सूची बनाएं जहां से उत्तर-पश्चिम उड़ान भरती है EOS\t	O O O O O O O O O O O atis_city
+BOS उत्तर पश्चिम किन शहरों के लिए उड़ान भरता है EOS\t	B-fromloc.state_name I-airline_name O O O O O O O atis_city
+BOS मैं 4 बजे के बाद डलास से सैन फ्रांसिस्को के लिए एक कनेक्टिंग फ्लाइट चाहूंगा EOS\t	O B-arrive_time.start_time I-depart_time.time O B-depart_time.time_relative B-stoploc.city_name O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS कृपया डलास से सैन फ्रांसिस्को के लिए सभी उड़ानें सूचीबद्ध करें EOS\t	O B-stoploc.city_name O B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS मुझे फिलाडेल्फिया से डलास तक अमेरिकी एयरलाइंस की सुबह की उड़ानों के बारे में फिर से बताएं EOS\t	O O O B-stoploc.city_name O B-airline_name I-airline_name O B-depart_time.period_of_day O O O O O O O O atis_flight
+BOS मुझे वे उड़ानें बताएं जो फ़िलाडेल्फ़िया से प्रस्थान करती हैं और डलास जाती हैं EOS\t	O O O O O B-fromloc.city_name O O O O O B-stoploc.city_name O O atis_flight
+BOS d9s क्या है? EOS\t	B-aircraft_code O O atis_abbreviation
+BOS d9s किस प्रकार का विमान है EOS\t	B-aircraft_code O O O O O atis_aircraft
+BOS d9s क्या है? EOS\t	B-aircraft_code O O atis_abbreviation
+BOS मुझे टावर एयर द्वारा सेवा प्राप्त हवाई अड्डे दिखाओ EOS\t	O O O B-arrive_time.time_relative O O O O O atis_airport
+BOS मुझे जेएफके और ऑरलैंडो के बीच प्रथम श्रेणी और कोच उड़ानें दिखाओ EOS\t	O O O B-fromloc.city_name O O O O O O O O atis_flight
+BOS मुझे कैनेडी हवाई अड्डे से मियामी तक की प्रथम श्रेणी और कोच वाली उड़ानें दिखाओ EOS\t	O B-fromloc.airport_name O O O B-fromloc.city_name O O O O O O O O O atis_flight
+BOS मुझे जेएफके से मियामी तक की प्रथम श्रेणी और कोच वाली उड़ानें दिखाओ EOS\t	O O O B-fromloc.city_name O O O O O O O O O atis_flight
+BOS क्या कभी टॉवर एयर पर भोजन परोसा जाता है? EOS\t	O O O O O B-meal O O O atis_meal
+BOS ये स्नैक्स टावर एयर पर परोसे जाते हैं EOS\t	O O O O O O O O atis_meal
+BOS जेएफके से मियामी तक डेल्टा एयरलाइंस की उड़ानें दिखाएं EOS\t	O O B-fromloc.city_name O B-airline_name I-airline_name O O O atis_flight
+BOS बोस्टन से साल्ट लेक तक डेल्टा एयरलाइंस दिखाएं EOS\t	B-fromloc.city_name O O O O B-airline_name I-airline_name O atis_flight
+BOS बोस्टन से साल्ट लेक तक डेल्टा एयरलाइंस की उड़ानें दिखाएं EOS\t	B-fromloc.city_name O O O O B-airline_name I-airline_name O O O atis_flight
+BOS बोस्टन से साल्ट लेक सिटी तक डेल्टा एयरलाइंस की उड़ानें दिखाएं EOS\t	B-fromloc.city_name O O O O O B-airline_name I-airline_name O O O atis_flight
+BOS बोस्टन और वाशिंगटन डीसी के बीच उड़ानों का किराया क्या है? EOS\t	B-fromloc.city_name O B-toloc.city_name B-toloc.state_code O O O O I-transport_type O O atis_airfare
+BOS बोस्टन से साल्ट लेक सिटी तक का सबसे सस्ता किराया क्या है? EOS\t	B-fromloc.city_name O O O O O O O O I-transport_type O O atis_airfare
+BOS वाशिंगटन डीसी से साल्ट लेक सिटी तक सबसे कम किराया क्या है? EOS\t	B-toloc.city_name B-toloc.state_code O O O O O O B-cost_relative I-transport_type O O atis_airfare
+BOS बीडब्ल्यूआई से साल्ट लेक सिटी तक सबसे कम किराया क्या है? EOS\t	O O O O O O O B-cost_relative I-transport_type O O atis_airfare
+BOS मुझे डेट्रॉइट से लास वेगास और वापसी तक प्रथम श्रेणी टिकट की कीमत दिखाओ EOS\t	O O O B-toloc.city_name I-toloc.city_name O O O O O O O O O atis_airfare
+BOS बोस्टन से वाशिंगटन डी.सी. तक सबसे पहले पहुंचने वाली उड़ान कौन सी है? EOS\t	B-fromloc.city_name O B-toloc.city_name O O O B-depart_time.time_relative O O O O B-fare_basis_code O atis_flight
+BOS बोस्टन और वाशिंगटन डीसी के बीच सबसे जल्दी पहुंचने वाली उड़ान कौन सी है? EOS\t	B-fromloc.city_name O B-toloc.city_name B-toloc.state_code O O O B-depart_time.period_of_day O O O O B-fare_basis_code O atis_flight
+BOS बोस्टन और वाशिंगटन डीसी के बीच सबसे जल्दी पहुंचने वाली उड़ान कौन सी है? EOS\t	B-fromloc.city_name O B-toloc.city_name B-toloc.state_code O O O B-depart_time.period_of_day O O O O B-fare_basis_code O atis_flight
+BOS ह्यूस्टन से ऑरलैंडो तक सबसे पहले पहुंचने वाली उड़ान कौन सी है? EOS\t	B-toloc.city_name O B-fromloc.city_name O O B-depart_time.time_relative O O O O B-fare_basis_code O atis_flight
+BOS ह्यूस्टन से ऑरलैंडो तक सबसे पहले पहुंचने वाली उड़ान कौन सी है? EOS\t	B-toloc.city_name O B-fromloc.city_name O O B-depart_time.time_relative O O O O B-fare_basis_code O atis_flight
+BOS मुझे ह्यूस्टन और ऑरलैंडो के बीच उड़ानें दिखाओ EOS\t	O B-toloc.city_name O B-fromloc.city_name O O O O atis_flight
+BOS मुझे ह्यूस्टन और ऑरलैंडो के बीच उड़ानें दिखाओ EOS\t	O B-toloc.city_name O B-fromloc.city_name O O O O atis_flight
+BOS मुझे ह्यूस्टन से ऑरलैंडो तक की उड़ानें दिखाओ EOS\t	O B-toloc.city_name O B-fromloc.city_name O O O O atis_flight
+BOS रात्रि 8 बजे से 9 बजे के बीच डेनवर से प्रस्थान करने वाली सभी उड़ानों की सूची बनाएं EOS\t	O B-depart_time.time I-depart_time.time O B-arrive_time.time I-depart_time.time O O B-toloc.city_name O O O O O O O O O atis_flight
+BOS विमान 733 में बैठने की क्षमता क्या है? EOS\t	O B-aircraft_code O O O O O O atis_capacity
+BOS 72s में बैठने की क्षमता क्या है? EOS\t	O O O O O O O atis_capacity
+BOS विमान 72s की बैठने की क्षमता क्या है? EOS\t	O O O O O O O O atis_capacity
+BOS विमान m80 की बैठने की क्षमता क्या है? EOS\t	O O O O O O O O atis_capacity
+BOS विमान m80 के प्रकार की बैठने की क्षमता क्या है? EOS\t	O O O O O O O O O O atis_capacity
+BOS m80 की बैठने की क्षमता क्या है? EOS\t	O O O O O O O atis_capacity
+BOS कौन सी एयरलाइंस डेनवर को सेवा प्रदान करती हैं EOS\t	O B-fare_basis_code I-airline_name B-toloc.city_name O O O O O atis_airline
+BOS डेनवर से या उसके लिए उड़ान भरने वाली एयरलाइनों की सूची बनाएं EOS\t	B-toloc.city_name O O O O O O O O O O O atis_airline
+BOS कौन सी एयरलाइंस डेनवर के लिए उड़ान भरती हैं EOS\t	O B-fare_basis_code I-airline_name B-toloc.city_name O O O O O atis_airline
+BOS रात 8 से 9 बजे के बीच डेनवर आने वाली सभी उड़ानों की सूची बनाएं EOS\t	B-depart_time.period_of_day B-depart_time.time O B-arrive_time.time I-depart_time.time O O B-toloc.city_name O O O O O O O atis_flight
+BOS 73s की क्षमता क्या है EOS\t	B-aircraft_code O O O O atis_capacity
+BOS 73s क्या है EOS\t	B-aircraft_code O O atis_abbreviation
+BOS विमान 73s में बैठने की क्षमता क्या है? EOS\t	O B-aircraft_code O O O O O O atis_capacity
+BOS 757 में बैठने की क्षमता क्या है? EOS\t	B-aircraft_code O O O O O O atis_capacity
+BOS 757 कितने लोगों को पकड़ेगा EOS\t	B-aircraft_code O O O O atis_capacity
+BOS 757 पर कितने यात्री उड़ सकते हैं? EOS\t	B-aircraft_code O O O O O O atis_capacity
+BOS डेनवर में रात 8 से 9 बजे के बीच आने वाली सभी दैनिक उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O B-depart_time.period_of_day B-depart_time.time O B-arrive_time.time I-depart_time.time O O O O O B-flight_days O O O O atis_flight
+BOS डेनवर में रात 8 से 9 बजे तक आने वाली सभी दैनिक उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O B-depart_time.period_of_day B-depart_time.time O B-arrive_time.time I-depart_time.time O O O O B-flight_days O O O O atis_flight
+BOS मुझे रात 8 बजे से 9 बजे के बीच डेनवर आने वाली सभी दैनिक उड़ानें दिखाएँ EOS\t	O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O B-arrive_time.time I-depart_time.time O O B-toloc.city_name O O O B-flight_days O O atis_flight
+BOS 757 में बैठने की क्षमता क्या है? EOS\t	B-aircraft_code O O O O O O atis_capacity
+BOS मुझे m80 विमान के बारे में बताएं? EOS\t	O O O O O O O atis_aircraft
+BOS मुझे m80 विमान के बारे में बताएं? EOS\t	O O O O O O O atis_aircraft
+BOS मुझे एम80 नामक विमान के प्रकार के बारे में बताएं EOS\t	O B-aircraft_code O O O O O O O O atis_aircraft
+BOS 733 में बैठने की क्षमता क्या है? EOS\t	B-aircraft_code O O O O O O atis_capacity
+BOS m80 की बैठने की क्षमता क्या है? EOS\t	O O O O O O O atis_capacity
+BOS विमान m80 पर बैठने की क्षमता क्या है? EOS\t	O O O O O O O O atis_capacity
+BOS 8 से 9 बजे के बीच डेनवर आने वाली या जाने वाली सभी उड़ानों की सूची बनाएं EOS\t	B-depart_time.time O B-arrive_time.time I-depart_time.time O O B-toloc.city_name O O O O O O O O O O atis_flight
+BOS रात 8 से 9 बजे के बीच डेनवर आने वाली सभी उड़ानों की सूची बनाएं EOS\t	B-depart_time.period_of_day B-depart_time.time O B-arrive_time.time I-depart_time.time O O B-toloc.city_name O O O O O O O atis_flight
+BOS रात 8 से 9 बजे के बीच डेनवर पहुंचने वाले सभी प्रकार के विमानों की सभी उड़ानों की सूची बनाएं EOS\t	B-depart_time.period_of_day B-depart_time.time O B-arrive_time.time I-depart_time.time O O B-toloc.city_name O O O O O O O O O O O O atis_flight
+BOS कृपया सोमवार सुबह नैशविले से मेम्फिस तक की सभी उड़ानों की सूची बनाएं EOS\t	O B-depart_date.day_name B-depart_time.period_of_day O O B-fromloc.city_name O O O O O O O atis_flight
+BOS कृपया सोमवार सुबह नैशविले से मेम्फिस के लिए उड़ानें सूचीबद्ध करें EOS\t	O B-depart_date.day_name B-depart_time.period_of_day O O B-fromloc.city_name O O O O O atis_flight
+BOS जब मैं सुबह 842 बजे पहुंचूं तो क्या मेम्फिस हवाई अड्डे से शहर में जमीनी परिवहन उपलब्ध है EOS\t	O O B-depart_time.period_of_day O I-depart_time.time O O O B-fromloc.city_name O O O O O O O O O atis_ground_service
+BOS कृपया सोमवार रात को मेम्फिस से न्यूयॉर्क शहर के लिए उड़ानें सूचीबद्ध करें EOS\t	O B-depart_date.day_name B-depart_time.period_of_day O B-fromloc.city_name O O O O O O O O atis_flight
+BOS सीवीजी क्या है? EOS\t	B-airport_code O O atis_abbreviation
+BOS ला गार्डिया हवाई अड्डे से न्यूयॉर्क शहर के लिए कौन सा जमीनी परिवहन उपलब्ध है EOS\t	B-fromloc.airport_name I-fromloc.airport_name O O O O O O O O O O O O O atis_ground_service
+BOS क्या एलजीए से न्यूयॉर्क शहर में जमीनी परिवहन है? EOS\t	O B-airport_code O O O O O O O atis_ground_service
+BOS कृपया एलजीए से न्यूयॉर्क शहर तक जमीनी परिवहन की सूची बनाएं EOS\t	O B-airport_code O O O O O O O O O atis_ground_service
+BOS कृपया ईडब्ल्यूआर से न्यूयॉर्क शहर में जमीनी परिवहन की सूची बनाएं EOS\t	O B-airport_code O O O O O O O O O atis_ground_service
+BOS मुझे मेम्फिस से न्यूयॉर्क शहर के लिए सुबह की उड़ानें दिखाओ EOS\t	O B-fromloc.city_name O O O O O B-depart_time.period_of_day O O O atis_flight
+BOS मुझे न्यूयॉर्क शहर से नैशविले के लिए बुधवार शाम 5 बजे के बाद जाने वाली उड़ानें दीजिए EOS\t	O O O O O O O B-depart_date.day_name B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O O O atis_flight
+BOS मुझे नैशविले हवाई अड्डे से जमीनी परिवहन के बारे में बताएं EOS\t	O O O O O O O O O O O atis_ground_service
+BOS सिनसिनाटी से चार्लोट के लिए कौन सी नॉनस्टॉप उड़ानें दोपहर के बाद रवाना होती हैं और शाम 7 बजे से पहले पहुंचती हैं EOS\t	B-fromloc.city_name O O O O O B-fare_basis_code O O B-depart_time.period_of_day O B-depart_time.time_relative O O O O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O B-depart_time.time_relative O O atis_flight
+BOS अलास्का एयरलाइंस को बरबैंक से कितनी उड़ानें लेनी पड़ती हैं EOS\t	B-airline_name I-airline_name O B-fromloc.city_name O O O O O O atis_flight
+BOS बरबैंक से कहीं भी अलास्का एयरलाइन की उड़ानों की सूची बनाएं EOS\t	B-fromloc.city_name O O O B-airline_name I-airline_name O O O O O atis_flight
+BOS बरबैंक से अलास्का एयरलाइन की उड़ानों की सूची बनाएं EOS\t	B-fromloc.city_name O B-airline_name I-airline_name O O O O O atis_flight
+BOS कौन सी एयरलाइन है EOS\t	O B-fare_basis_code I-airline_name O atis_airline
+BOS बरबैंक में आने वाली अलास्का एयरलाइंस की उड़ानों की सूची बनाएं EOS\t	B-fromloc.city_name O O O B-airline_name I-airline_name O O O O O atis_flight
+BOS बरबैंक से प्रस्थान करने वाली अलास्का एयरलाइंस की उड़ानों की सूची बनाएं EOS\t	B-fromloc.city_name O O O O B-airline_name I-airline_name O O O O O atis_flight
+BOS अलास्का एयरलाइंस की सभी उड़ानों की सूची बनाएं EOS\t	B-airline_name I-airline_name O O O O O O atis_flight
+BOS सिएटल से प्रस्थान करने वाली सभी उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O O O O O O O O O atis_flight
+BOS इंडियानापोलिस से मेम्फिस के लिए दोपहर से पहले रवाना होने वाली उड़ानों की सूची बनाएं EOS\t	B-toloc.city_name O B-fromloc.city_name O O B-depart_time.period_of_day O B-depart_time.time_relative O O O O O O O atis_flight
+BOS चार्लोट से लास वेगास तक का सबसे सस्ता किराया सूचीबद्ध करें EOS\t	O O B-toloc.city_name I-toloc.city_name O O O O I-transport_type O O atis_airfare
+BOS मैं सुबह-सुबह लॉस एंजिल्स से चार्लोट के लिए उड़ान चाहता हूं EOS\t	O O B-toloc.city_name I-toloc.city_name O O O O O O O atis_flight
+BOS मुझे चार्लोट से नेवार्क के लिए सुबह की उड़ान चाहिए EOS\t	O O O B-toloc.city_name O O B-depart_time.period_of_day O O O atis_flight
+BOS मुझे नेवार्क से लॉस एंजिल्स के लिए सुबह की उड़ान चाहिए EOS\t	O B-toloc.city_name O B-toloc.city_name I-toloc.city_name O O B-depart_time.period_of_day O O O atis_flight
+BOS मुझे नेवार्क से लॉस एंजिल्स के लिए एक शाम की उड़ान चाहिए EOS\t	O B-toloc.city_name O B-toloc.city_name I-toloc.city_name O O O B-depart_time.period_of_day O O O atis_flight
+BOS मुझे एक ऐसी उड़ान चाहिए जो रविवार को मॉन्ट्रियल क्यूबेक से सैन डिएगो कैलिफ़ोर्निया के लिए रवाना हो EOS\t	O O O O O O B-depart_date.day_name O B-fromloc.city_name B-fromloc.state_name O B-toloc.city_name I-toloc.city_name O O O O O atis_flight
+BOS मुझे मंगलवार को एक उड़ान चाहिए जो सैन डिएगो से इंडियानापोलिस इंडियाना के लिए रवाना हो और जो दोपहर में रवाना हो EOS\t	O B-depart_date.day_name O O O O O B-toloc.city_name I-toloc.city_name O B-toloc.city_name B-toloc.state_name O O O O O O B-depart_time.period_of_day O O O atis_flight
+BOS मैं गुरुवार सुबह इंडियानापोलिस से टोरंटो के लिए निकलना चाहूँगा EOS\t	O B-depart_date.day_name B-depart_time.period_of_day B-toloc.city_name O B-fromloc.city_name O O O O atis_flight
+BOS मैं शुक्रवार की सुबह टोरंटो से मॉन्ट्रियल के लिए उड़ान चाहूंगा EOS\t	O B-depart_date.day_name O B-depart_time.period_of_day B-fromloc.city_name O B-fromloc.city_name O O O O atis_flight
+BOS मैं सिनसिनाटी से अमेरिकी बरबैंक के लिए एक उड़ान चाहूंगा EOS\t	O B-fromloc.city_name O B-airline_name B-fromloc.city_name O O O O O atis_flight
+BOS शाम 419 बजे रवाना होने वाली अमेरिकी उड़ान के लिए किस प्रकार के विमान का उपयोग किया जाता है? EOS\t	B-depart_time.period_of_day B-depart_time.time I-depart_time.time O O O B-airline_name O O O O O O O O O O O O atis_aircraft
+BOS मुझे कैनसस सिटी से शिकागो जाने वाली एक उड़ान चाहिए जो अगले बुधवार को रवाना हो और अगले दिन वापस आ जाए EOS\t	O O O O B-toloc.city_name O O O O O O I-return_date.date_relative B-depart_date.day_name O O O O I-return_date.date_relative O O B-airline_code O atis_flight
+BOS लॉन्ग बीच से सेंट तक कौन सी उड़ानें जाती हैं?  EOS\t	O O O O O O B-fare_basis_code O O O atis_flight
+BOS मेम्फिस से लास वेगास के लिए कौन सी उड़ानें हैं? EOS\t	B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O B-fare_basis_code O O atis_flight
+BOS लास वेगास से ओंटारियो के लिए कौन सी उड़ानें हैं? EOS\t	B-toloc.city_name I-toloc.city_name O B-toloc.city_name O O O B-fare_basis_code O O atis_flight
+BOS ओन्टारियो से मेम्फिस तक कौन सी उड़ानें हैं? EOS\t	O O B-fromloc.city_name O O B-fare_basis_code O O atis_flight
+BOS लास वेगास हवाई अड्डे पर किस प्रकार का जमीनी परिवहन है? EOS\t	B-toloc.city_name I-toloc.city_name O O O O O O O O O atis_ground_service
+BOS क्या ओन्टारियो हवाई अड्डे पर टैक्सी सेवा है? EOS\t	O O O O O B-transport_type O O atis_ground_service
+BOS टाम्पा से मिल्वौकी तक कौन सी उड़ानें हैं? EOS\t	O O O O O B-fare_basis_code O O atis_flight
+BOS मिल्वौकी से सिएटल के लिए कौन सी उड़ानें हैं? EOS\t	O O B-toloc.city_name O O O B-fare_basis_code O O atis_flight
+BOS यूनाइटेड पर ला गार्डिया से सैन जोस तक कौन सी उड़ानें हैं? EOS\t	B-airline_name O B-fromloc.airport_name I-fromloc.airport_name O B-toloc.city_name I-toloc.city_name O O B-fare_basis_code O O atis_flight
+BOS सोमवार को कौन सी उड़ानें हैं जो चार्लोट उत्तरी कैरोलिना से फीनिक्स एरिज़ोना तक यात्रा करती हैं EOS\t	B-depart_date.day_name O O B-fare_basis_code O O O O O I-fromloc.state_name O O B-toloc.state_name O I-round_trip O O atis_flight
+BOS फ़ीनिक्स एरिज़ोना से सेंट तक कौन सी उड़ानें हैं?  EOS\t	O B-toloc.state_name O O O O B-fare_basis_code O O atis_flight
+BOS गुरुवार को सेंट से कौन सी उड़ानें रवाना हो रही हैं?  EOS\t	B-depart_date.day_name O O O O B-fare_basis_code O O O O O atis_flight
+BOS सेंट से उड़ानें क्या हैं?  EOS\t	O O O O O atis_flight
+BOS बोस्टन से ऑरलैंडो तक कौन सी उड़ानें न्यूयॉर्क में रुकती हैं? EOS\t	B-fromloc.city_name O B-fromloc.city_name O O B-fare_basis_code O O O O O atis_flight
+BOS मुझे अगले सोमवार को बरबैंक से मिल्वौकी के लिए सुबह की उड़ान चाहिए EOS\t	O I-return_date.date_relative B-depart_date.day_name O B-fromloc.city_name O O O O B-depart_time.period_of_day O O O atis_flight
+BOS मिल्वौकी से सेंट तक की उड़ान के बारे में क्या ख्याल है?  EOS\t	O O O O O O O O O O O O atis_flight
+BOS और सेंट से एक उड़ान.  EOS\t	O O O O O atis_flight
+BOS सेंट से मंगलवार रात को उड़ान भरने वाली उड़ान के बारे में क्या ख़याल है?  EOS\t	O O B-depart_date.day_name B-depart_time.period_of_day O O O O O O O O O O O atis_flight
+BOS मुझे साल्ट लेक से नेवार्क हवाई अड्डे के लिए एक उड़ान चाहिए जो शनिवार शाम 6 बजे से पहले आ जाए EOS\t	O O O O B-toloc.city_name O O O O O O O O B-arrive_date.day_name B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative B-airline_code O atis_flight
+BOS मुझे सिनसिनाटी से नेवार्क हवाई अड्डे के लिए एक उड़ान चाहिए जो शनिवार शाम 6 बजे से पहले पहुंचे EOS\t	O B-fromloc.city_name O B-toloc.city_name O O O O O O O O B-arrive_date.day_name B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O atis_flight
+BOS मुझे मियामी से शिकागो के लिए अमेरिकन एयरलाइंस की एक उड़ान चाहिए जो शाम 5 बजे के आसपास आए EOS\t	O B-fromloc.city_name O B-toloc.city_name O O B-airline_name I-airline_name O O O O O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O O O atis_flight
+BOS मुझे मेम्फिस से टैकोमा के लिए एक उड़ान चाहिए जो लॉस एंजिल्स से होकर जाए EOS\t	O B-fromloc.city_name O O O O O O O O B-toloc.city_name I-toloc.city_name O O O atis_flight
+BOS सिनसिनाटी और सैन जोस कैलिफ़ोर्निया के बीच कौन सी उड़ानें हैं जो शाम 6 बजे के बाद रवाना होती हैं? EOS\t	B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O B-fare_basis_code O O O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O O atis_flight
+BOS सैन जोस और ह्यूस्टन टेक्सास के बीच नॉनस्टॉप उड़ानें क्या हैं? EOS\t	B-toloc.city_name I-toloc.city_name O B-toloc.city_name B-toloc.state_name O O O O O O atis_flight
+BOS ह्यूस्टन और मेम्फिस के बीच नॉनस्टॉप उड़ानें क्या हैं? EOS\t	B-toloc.city_name O B-fromloc.city_name O O O O O O atis_flight
+BOS बुधवार को मेम्फिस और सिनसिनाटी के बीच कौन सी उड़ानें हैं? EOS\t	B-depart_date.day_name O B-fromloc.city_name O B-fromloc.city_name O O O B-fare_basis_code O O atis_flight
+BOS नेवार्क से नैशविले के लिए अमेरिकी उड़ानें क्या हैं? EOS\t	B-toloc.city_name O O O O B-airline_name O O O atis_flight
+BOS ओंटारियो से वेस्टचेस्टर तक की उड़ानें जो शिकागो में रुकती हैं EOS\t	B-toloc.city_name O B-toloc.city_name O O O O B-toloc.city_name O O O atis_flight
+BOS कृपया लॉस एंजिल्स से चार्लोट तक की उड़ानें सूचीबद्ध करें EOS\t	O B-toloc.city_name I-toloc.city_name O O O O O O O atis_flight
+BOS कृपया चार्लोट से न्यूआर्क तक की उड़ानें सूचीबद्ध करें EOS\t	O O O O O O O O O atis_flight
+BOS कृपया न्यूआर्क से लॉस एंजिल्स के लिए उड़ानें सूचीबद्ध करें EOS\t	O O O B-toloc.city_name I-toloc.city_name O O O O O atis_flight
+BOS कृपया अमेरिकन एयरलाइंस पर सिनसिनाटी से बरबैंक तक की उड़ानें सूचीबद्ध करें EOS\t	O B-airline_name I-airline_name O B-fromloc.city_name O B-fromloc.city_name O O O O O atis_flight
+BOS कृपया मुझे सोलह जून को कैनसस सिटी से शिकागो के लिए उड़ानें प्रदान करें EOS\t	O O O B-depart_date.month_name O O O O B-toloc.city_name O O O O O atis_flight
+BOS कृपया मुझे सत्रह जून को शिकागो से कैनसस सिटी के लिए उड़ान प्रदान करें EOS\t	O O B-depart_date.day_number B-depart_date.month_name O B-toloc.city_name O O O O O O O O atis_flight
+BOS कृपया सोलह जून को कैनसस सिटी से शिकागो के लिए सभी उड़ानें सूचीबद्ध करें EOS\t	O O B-depart_date.month_name O O O O B-toloc.city_name O O O O O O atis_flight
+BOS कृपया सत्रह जून को शिकागो से कैनसस सिटी के लिए सभी उड़ानें सूचीबद्ध करें EOS\t	O B-depart_date.day_number B-depart_date.month_name O B-toloc.city_name O O O O O O O O O atis_flight
+BOS मैं बरबैंक से मिल्वौकी तक यात्रा करना चाहता हूं EOS\t	O B-fromloc.city_name O O O I-round_trip O O O atis_flight
+BOS क्या आप मुझे अगले शनिवार को शाम 6 बजे से पहले पहुंचने से पहले साल्ट लेक सिटी से न्यूयॉर्क शहर के लिए एक उड़ान ढूंढ सकते हैं EOS\t	O O O I-return_date.date_relative B-arrive_date.day_name O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O B-depart_time.time_relative O O O O O O O O O O O O O atis_flight
+BOS क्या आप मुझे शनिवार शाम 6 बजे से पहले सिनसिनाटी से न्यूयॉर्क के लिए दूसरी उड़ान ढूंढ सकते हैं EOS\t	O O O B-arrive_date.day_name B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative B-fromloc.city_name O O O O O O O O O atis_flight
+BOS क्या आप अगले शनिवार को शाम 6 बजे से पहले आने वाली साल्ट लेक सिटी से न्यूयॉर्क के लिए सभी डेल्टा उड़ानों की सूची बना सकते हैं? EOS\t	O O I-return_date.date_relative B-arrive_date.day_name O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O O O O O O O O O B-airline_name O O O O O O atis_flight
+BOS मैं शाम 5 बजे के आसपास आने वाली अमेरिकी एयरलाइंस से मियामी से शिकागो के लिए उड़ान भरना चाहूंगा EOS\t	O B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O O O O B-airline_name I-airline_name O B-fromloc.city_name O B-toloc.city_name O O O O O atis_flight
+BOS मैं अगले बुधवार को कैनसस सिटी से शिकागो तक यात्रा करना चाहूंगा EOS\t	O I-return_date.date_relative B-depart_date.day_name O O O O B-toloc.city_name O I-round_trip O O atis_flight
+BOS मुझे कैनसस सिटी से शिकागो के लिए बुधवार, 26 मई को शाम 7 बजे आने वाली एक राउंड ट्रिप फ्लाइट चाहिए EOS\t	O O O O B-toloc.city_name O O O O B-depart_date.month_name O B-depart_time.period_of_day B-depart_time.time I-depart_time.time O O O O O O O atis_flight
+BOS हाँ, मैं मेम्फिस से टैकोमा तक लॉस एंजिल्स में रुकने वाली एक उड़ान ढूँढना चाहता हूँ EOS\t	O O B-fromloc.city_name O O O B-toloc.city_name I-toloc.city_name O O O O O O O O atis_flight
+BOS सोमवार सुबह सैन डिएगो से फ़ीनिक्स के लिए उड़ान खोजें EOS\t	B-depart_date.day_name B-depart_time.period_of_day B-toloc.city_name I-toloc.city_name O O O O O O atis_flight
+BOS सोमवार को फ़ीनिक्स से डेट्रॉइट के लिए उड़ान खोजें EOS\t	B-depart_date.day_name O O O O O O O O atis_flight
+BOS मंगलवार को डेट्रॉइट से सैन डिएगो के लिए उड़ान खोजें EOS\t	B-depart_date.day_name O O O B-toloc.city_name I-toloc.city_name O O O O atis_flight
+BOS सोमवार को सिनसिनाटी से सैन जोस के लिए उड़ान खोजें EOS\t	B-depart_date.day_name O B-fromloc.city_name O B-toloc.city_name I-toloc.city_name O O O O atis_flight
+BOS बुधवार को सैन जोस से ह्यूस्टन के लिए उड़ान खोजें EOS\t	B-depart_date.day_name O B-toloc.city_name I-toloc.city_name O B-toloc.city_name O O O O atis_flight
+BOS शुक्रवार को ह्यूस्टन से मेम्फिस के लिए उड़ान खोजें EOS\t	B-depart_date.day_name O B-toloc.city_name O B-fromloc.city_name O O O O atis_flight
+BOS रविवार को मेम्फिस से सिनसिनाटी के लिए उड़ान खोजें EOS\t	B-depart_date.day_name O B-fromloc.city_name O B-fromloc.city_name O O O O atis_flight
+BOS शाम 630 बजे के आसपास नेवार्क से नैशविले के लिए अमेरिकी उड़ान खोजें EOS\t	B-depart_time.period_of_day B-depart_time.time I-depart_time.time O O B-toloc.city_name O O O O B-airline_name O O atis_flight
+BOS कृपया सैन फ्रांसिस्को में स्टॉपओवर के साथ लॉस एंजिल्स से टैकोमा वाशिंगटन तक की राउंड ट्रिप फ्लाइट खोजें, जिसका मूल्य 10 जून 1993 के लिए 300 डॉलर से अधिक न हो। EOS\t	O B-toloc.city_name I-toloc.city_name O O O O B-toloc.city_name I-toloc.city_name O O B-toloc.city_name O O O O O O O O B-arrive_time.time B-depart_date.month_name B-depart_date.year O O B-fare_amount I-fare_amount O B-mod O O atis_flight
+BOS क्या 10 जून को बरबैंक से टैकोमा के लिए कोई उड़ानें हैं? EOS\t	O B-arrive_time.time B-depart_date.month_name O B-fromloc.city_name O O O O O O O atis_flight
+BOS कृपया ओन्टारियो से वेस्टचेस्टर के लिए एक उड़ान ढूंढें जो सत्रह मई को रात के खाने के साथ एक तरफ से शिकागो में रुकेगी EOS\t	O O O B-toloc.city_name O O O O O O B-depart_date.day_number B-depart_date.month_name O B-depart_time.period_of_day O O O O O O O B-toloc.city_name O O atis_flight
+BOS मैं बरबैंक से मिल्वौकी के लिए उड़ान बुक करना चाहता हूँ EOS\t	O B-fromloc.city_name O O O O O O O O O atis_flight
+BOS मुझे बरबैंक से मिल्वौकी तक की सभी उड़ानें दिखाओ EOS\t	O B-fromloc.city_name O O O O O O O atis_flight
+BOS मुझे मिल्वौकी से सेंट तक की सभी उड़ानें मिलें।  EOS\t	O O O O O O O O O atis_flight
+BOS अब मुझे सेंट से सभी उड़ानें दिखाओ।  EOS\t	O O O O O O O atis_flight
+BOS क्या कोई ऐसी एयरलाइन है जो बरबैंक से मिल्वौकी, मिल्वौकी से सेंट तक उड़ान भरती है।  EOS\t	O O O I-airline_name O O B-fromloc.city_name O O O O O O O O O atis_airline
+BOS मुझे बरबैंक से मिल्वौकी तक सेंट में रुकने वाली सभी राउंड ट्रिप उड़ानें मिलें।  EOS\t	O B-fromloc.city_name O O O O O O O O O O O O atis_flight
+BOS मैं वेस्टचेस्टर काउंटी के लिए दो उड़ानें बुक करना चाहूंगा EOS\t	O B-toloc.city_name I-toloc.city_name O O O O O O O atis_flight
+BOS मैं साल्ट लेक सिटी से वेस्टचेस्टर काउंटी के लिए एक उड़ान बुक करना चाहता हूँ EOS\t	O O O O O B-toloc.city_name I-toloc.city_name O O O O O O O O atis_flight
+BOS मुझे वेस्टचेस्टर काउंटी के निकट सभी हवाई अड्डों के बारे में बताएं EOS\t	O B-toloc.city_name I-toloc.city_name O O O O O O O O O atis_airport
+BOS मैं अगले शनिवार के लिए यूनाइटेड एयरलाइंस पर सिनसिनाटी से न्यूयॉर्क शहर के लिए उड़ान बुक करना चाहता हूं EOS\t	O I-return_date.date_relative B-arrive_date.day_name O O B-airline_name I-airline_name O B-fromloc.city_name O O O O O O O O O O atis_flight
+BOS मुझे न्यूयॉर्क शहर क्षेत्र के सभी हवाई अड्डों के बारे में बताएं EOS\t	O O O O O O O O O O O O atis_airport
+BOS कृपया सिनसिनाटी से न्यूयॉर्क शहर क्षेत्र के किसी भी हवाई अड्डे के लिए अगले शनिवार शाम 6 बजे से पहले आने वाली सभी उड़ानें ढूंढें EOS\t	O B-fromloc.city_name O O O O O O O O O O O I-return_date.date_relative B-arrive_date.day_name B-depart_time.period_of_day B-arrive_time.time I-depart_time.time O B-depart_time.time_relative O O O O O atis_flight
+BOS मेरे लिए सिनसिनाटी से न्यूयॉर्क शहर क्षेत्र के किसी भी हवाई अड्डे के लिए उड़ान खोजें EOS\t	O O B-fromloc.city_name O O O O O O O O O O O O O atis_flight
+BOS मैं अमेरिकन एयरलाइंस से मियामी से शिकागो के लिए उड़ान भरना चाहता हूँ EOS\t	O B-airline_name I-airline_name O B-fromloc.city_name O B-toloc.city_name O O O O O O atis_flight
+BOS मैं कैनसस सिटी से शिकागो के लिए एक राउंड ट्रिप फ्लाइट बुक करना चाहूंगा EOS\t	O O O O B-toloc.city_name O O O O O O O O O atis_flight
+BOS मेरे लिए एक ऐसी उड़ान ढूंढें जो मेम्फिस से टैकोमा तक उड़ान भरती हो EOS\t	O O O O O O O B-fromloc.city_name O O O O O O atis_flight
